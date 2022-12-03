@@ -1,0 +1,21 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "userName": "Serrin",
+            "password": "aperature"
+        }
+    ],
+
+    "characters": [
+        {
+            "id": 1,
+            "name": "",
+            "thumbnail": "",
+            "displayImg": "",
+            "strength": "",
+            "weakness": ""
+        }
+    ]
+}
+
