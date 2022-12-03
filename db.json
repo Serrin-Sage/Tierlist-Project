@@ -1,21 +1,19 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "userName": "Serrin",
-            "password": "aperature"
-        }
-    ],
-
-    "characters": [
-        {
-            "id": 1,
-            "name": "",
-            "thumbnail": "",
-            "displayImg": "",
-            "strength": "",
-            "weakness": ""
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "userName": "Serrin",
+      "password": "aperature"
+    }
+  ],
+  "characters": [
+    {
+      "id": 1,
+      "name": "Master Chief",
+      "thumbnail": "./src/images/MasterChiefThumnail.png",
+      "displayImg": "./src/images/MasterChiefDisplay.png",
+      "strength": "Killing Stuff",
+      "weakness": "Blue Women"
+    }
+  ]
 }
-
