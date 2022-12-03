@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const SignIn = ({ users }) => {
+const SignIn = ({ users, setLoggedIn }) => {
     
     let testArray = users.map((user) => {
         return  { 
-                    userName: user.userName, 
+                    username: user.username, 
                     password: user.password
                 }
     })
@@ -16,16 +16,17 @@ const SignIn = ({ users }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         let credentials = {
-            userName: username,
-            password: password
+            username,
+            password
         }
         console.log(credentials)
         console.log(testArray)
-        if (testArray.includes("Serrin")) {
+        if (testArray.some(e => e.username === username) && testArray.some(e => e.password === password)) {
             console.log("USER EXISTS")
         } else {
             console.log("GO TO SIGN UP PAGE")
         }
+        // setLoggedIn(true)
     }
 
     return (

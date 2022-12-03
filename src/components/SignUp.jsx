@@ -2,14 +2,20 @@ import { useState } from "react"
 
 const SignUp = ({ users, setUsers }) => {
 
+    let testArray = users.map((user) => {
+        return  { 
+                    username: user.username, 
+                    password: user.password
+                }
+    })
+    
     const [username, setUserName] = useState()
     const [password, setPassword] = useState()
 
     const handleSubmit = (e) => {
         e.preventDefault()
         let newUser = {
-            id: 2,
-            userName: username,
+            username: username,
             password: password
         }
 

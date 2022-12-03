@@ -4,7 +4,11 @@ import MainPage from './components/MainPage'
 import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
 import GlobalTiers from './components/GlobalTiers'
+
+
 function App() {
+
+  const [loggedIn, setLoggedIn] = useState(false)
   const [users, setUsers] = useState([])
   const [selectedUser, setSelectedUser] = useState([])
   
@@ -15,13 +19,17 @@ function App() {
       setUsers(data)
     })
   },[setUsers])
-  
+
+  // if(!loggedIn) {
+  //   return <SignIn users={users} setLoggedIn={setLoggedIn}/>
+  // }
+
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<MainPage />}/>
-        <Route path="signin" element={<SignIn users={users} />} />
-        <Route path="signup" element={<SignUp users={users} setUsers={setUsers}/>} />
+        <Route path="signin" element={<SignIn users={users} setLoggedIn={setLoggedIn}/>} />
+        <Route path="signup" element={<SignUp users={users} setUsers={setUsers} />} />
         <Route path="globaltiers" element={GlobalTiers} />
       </Routes>
     </div>
