@@ -3,12 +3,20 @@
     {
       "id": 1,
       "username": "Serrin",
-      "password": "aperature"
+      "password": "aperature",
+      "tierlist": []
     },
     {
-      "username": "Potato",
-      "password": "123",
+      "username": "Mary",
+      "password": "stinky",
+      "tierlist": [],
       "id": 2
+    },
+    {
+      "username": "Mary",
+      "password": "potati",
+      "tierlist": [],
+      "id": 3
     }
   ],
   "characters": [

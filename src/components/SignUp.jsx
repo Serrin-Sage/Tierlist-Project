@@ -1,6 +1,7 @@
 import { useState } from "react"
+import { Link } from 'react-router-dom'
 
-const SignUp = ({ users, setUsers }) => {
+const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
 
     let testArray = users.map((user) => {
         return  { 
@@ -9,15 +10,21 @@ const SignUp = ({ users, setUsers }) => {
                 }
     })
     
-    const [username, setUserName] = useState()
-    const [password, setPassword] = useState()
+    const [username, setUserName] = useState("")
+    const [password, setPassword] = useState("")
 
     const handleSubmit = (e) => {
         e.preventDefault()
         let newUser = {
             username: username,
-            password: password
+            password: password,
+            tierlist: []
         }
+        if (username === "" && password === "") {
+            console.log("ENTER VALID USERNAME AND PASSWORD")
+            return
+        }
+        
 
         fetch("http://localhost:3000/users", {
             method: "POST",
@@ -31,6 +38,9 @@ const SignUp = ({ users, setUsers }) => {
         setUsers((prevState) => {
             return [...prevState, newUser]
         })
+
+        setLoggedIn(true)
+        setCurrentUser(newUser)
     }
 
     return (

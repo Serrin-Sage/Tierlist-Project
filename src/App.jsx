@@ -9,8 +9,9 @@ import GlobalTiers from './components/GlobalTiers'
 function App() {
 
   const [loggedIn, setLoggedIn] = useState(false)
+  const [newUser, setNewUser] = useState(false)
   const [users, setUsers] = useState([])
-  const [selectedUser, setSelectedUser] = useState([])
+  const [currentUser, setCurrentUser] = useState([])
   
   useEffect(() => {
     fetch("http://localhost:3000/users")
@@ -20,16 +21,37 @@ function App() {
     })
   },[setUsers])
 
-  // if(!loggedIn) {
-  //   return <SignIn users={users} setLoggedIn={setLoggedIn}/>
-  // }
+  //if the user is not logged in, show the login page
+  if(!loggedIn) {
+    if(newUser) {
+      return <SignUp 
+        users={users} 
+        setUsers={setUsers} 
+        setLoggedIn={setLoggedIn}
+        setCurrentUser={setCurrentUser}/>
+    }
+    return <SignIn 
+      users={users} 
+      setLoggedIn={setLoggedIn} 
+      setNewUser={setNewUser} 
+      setCurrentUser={setCurrentUser}/>
+    
+  }
 
+  
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<MainPage />}/>
+        {/* <Route path="/mainpage" element={<MainPage setLoggedIn={setLoggedIn} setNewUser={setNewUser}/>}/>
+        <Route path="/" element={<MainPage setLoggedIn={setLoggedIn} setNewUser={setNewUser}/>}/> */}
+
+        {['mainpage', '/'].map(path => <Route path={path} element={<MainPage 
+          setLoggedIn={setLoggedIn} 
+          setNewUser={setNewUser}
+          currentUser={currentUser}/>} />)}
+          
         <Route path="signin" element={<SignIn users={users} setLoggedIn={setLoggedIn}/>} />
-        <Route path="signup" element={<SignUp users={users} setUsers={setUsers} />} />
+        <Route path="signup" element={<SignUp users={users} setUsers={setUsers} setLoggedIn={setLoggedIn}/>} />
         <Route path="globaltiers" element={GlobalTiers} />
       </Routes>
     </div>

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const SignIn = ({ users, setLoggedIn }) => {
+const SignIn = ({ users, setLoggedIn, setNewUser, setCurrentUser }) => {
     
     let testArray = users.map((user) => {
         return  { 
@@ -13,20 +13,26 @@ const SignIn = ({ users, setLoggedIn }) => {
     const [username, setUserName] = useState()
     const [password, setPassword] = useState()
 
+    
     const handleSubmit = (e) => {
         e.preventDefault()
         let credentials = {
             username,
             password
         }
-        console.log(credentials)
-        console.log(testArray)
+        // console.log(credentials)
+        // console.log(testArray)
+
+        //trying to check if user exists in db
         if (testArray.some(e => e.username === username) && testArray.some(e => e.password === password)) {
             console.log("USER EXISTS")
+            setLoggedIn(true)
+            setCurrentUser(credentials)
         } else {
             console.log("GO TO SIGN UP PAGE")
         }
-        // setLoggedIn(true)
+        
+
     }
 
     return (
@@ -47,7 +53,7 @@ const SignIn = ({ users, setLoggedIn }) => {
                     </div>
                 </form>
                 <br />
-                <Link to="/signup">Sign Up</Link>
+                <Link to="/signup" onClick={() => setNewUser(true)}>Sign Up</Link>
             </div>
         </div>
     )
