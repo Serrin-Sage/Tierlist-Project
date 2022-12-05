@@ -3,15 +3,36 @@
     flex-direction: column;
     align-items: center;
     margin: 1rem;
+    background-color: rgb(24, 18, 18);
+    margin: 0;
+}
+
+.tier-collection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .tier {
+    display: flex;
+    margin: 5px;
     height: 60px;
     width: 80%;
     border: solid 2px black;
-    border-bottom: 2px solid transparent;
+    background-color: grey;
 }
 
+.tier-letter {
+    background-color: red;
+    display: inline-block;
+    height: 93%;
+    width: 50px;
+    margin: 2px;
+    text-align: center;
+}
 #f-tier{
     border-bottom: solid 2px black;
 }

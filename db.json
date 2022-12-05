@@ -5,6 +5,12 @@
       "username": "Serrin",
       "password": "123",
       "tierlist": []
+    },
+    {
+      "id": 2,
+      "username": "Steve",
+      "password": "123",
+      "tierlist": []
     }
   ],
   "characters": [

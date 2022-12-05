@@ -24,7 +24,7 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
         
         users.some(element => {
             if (element.username == username) {
-                console.log("USER ALREADY EXISTS")
+                // console.log("USER ALREADY EXISTS")
                 setUserExists(true)
                 return true
             } else {
@@ -35,7 +35,7 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
     }
 
     if (userExists === false) {
-        console.log("CREATE A NEW USER")
+        console.log("NEW USER CREATED")
         fetch("http://localhost:3000/users", {
                 method: "POST",
                 headers: {
@@ -51,6 +51,12 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
         })
         setLoggedIn(true)
         setCurrentUser(newUser)
+        setUserExists()
+    }
+
+    if (userExists === true) {
+        console.log("USER ALREADY EXISTS")
+        setUserExists()
     }
 
     return (
