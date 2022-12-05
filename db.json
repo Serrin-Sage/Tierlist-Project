@@ -3,24 +3,6 @@
     {
       "id": 1,
       "username": "Serrin",
-      "password": "aperature",
-      "tierlist": []
-    },
-    {
-      "id": 2,
-      "username": "Bob",
-      "password": "123",
-      "tierlist": []
-    },
-    {
-      "id": 3,
-      "username": "Steve",
-      "password": "123",
-      "tierlist": []
-    },
-    {
-      "id": 4,
-      "username": "swer",
       "password": "123",
       "tierlist": []
     }

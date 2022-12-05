@@ -5,7 +5,7 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
 
     const [username, setUserName] = useState("")
     const [password, setPassword] = useState("")
-    const [userExists, setUserExists] = useState(null)
+    const [userExists, setUserExists] = useState()
 
     let newID = users.map((user) => {
         return user.id
@@ -51,11 +51,11 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
         })
         setLoggedIn(true)
         setCurrentUser(newUser)
-        setUserExists()
     }
+
     return (
-        <div>
-            <div>
+        <div className="main-signin">
+            <div className="signin-content">
             <h1>Sign Up Here</h1>
                 <form onSubmit={handleSubmit}>
                     <label>
@@ -66,8 +66,8 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
                         <p>Enter Password</p>
                         <input type="password" onChange={e => setPassword(e.target.value)} />
                     </label>
-                    <div>
-                        <button type='submit'>Complete</button>
+                    <div className="submit-btn">
+                        <button type='submit'>Confirm</button>
                     </div>
                 </form>
             </div>
