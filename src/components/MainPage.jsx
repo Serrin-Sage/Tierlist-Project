@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Header from './Header'
 import CharacterGrid from './CharacterGrid'
 import CharacterDisplay from './CharacterDisplay'
-import TietList from './TierList'
+import TierList from './TierList'
 
 
 const MainPage = ({ setLoggedIn, setNewUser, currentUser }) => {
@@ -29,6 +29,7 @@ const MainPage = ({ setLoggedIn, setNewUser, currentUser }) => {
             </div>
             <CharacterGrid allCharacters={allCharacters} setDisplayChar={setDisplayChar}/>
             <CharacterDisplay displayChar={displayChar}/>
+            <TierList />
         </div>
     )
 }
