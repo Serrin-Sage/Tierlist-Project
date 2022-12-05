@@ -1,0 +1,42 @@
+.character-grid-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-card {
+    margin: 2px;
+    border: solid black 1px;
+    /* background-color: rgb(115, 228, 228); */
+    animation-name: changeColors;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    
+}
+.grid-card img {
+    width: 90px;
+    height: 120px;
+}
+
+@keyframes changeColors {
+    0% {
+        background-color: rgb(115, 228, 228);
+    }
+    25% {
+        background-color: rgb(56, 161, 161);
+    }
+
+    50% {
+        background-color: rgb(11, 100, 100);
+    }
+
+    75% {
+        background-color: rgb(56, 161, 161);
+    }
+
+    100% {
+        background-color: rgb(115, 228, 228)
+    }
+}

@@ -7,8 +7,8 @@ const Header = ({ setLoggedIn, setNewUser, currentUser }) => {
 
     return (
         <div className="header">
-            <button onClick={() => LogOut()}>Log Out</button>
-            <h1>Welcome {currentUser.username}</h1>
+            <span onClick={() => LogOut()} className="logout-btn">Log Out</span>
+            <h1 className="welcome-title">Welcome {currentUser.username}</h1>
         </div>
     )
 }

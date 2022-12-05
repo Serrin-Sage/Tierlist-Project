@@ -25,7 +25,7 @@
     {
       "id": 2,
       "name": "Harry Potter",
-      "thumbnail": "./src/images/HarryPotterThumbnail.jpg",
+      "thumbnail": "./src/images/HarryPotterThumbnail.png",
       "displayImg": "./src/images/HarryPotterDisplay.png",
       "strength": "Killing Stuff",
       "weakness": "Blue Women"

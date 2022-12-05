@@ -2,12 +2,12 @@ const CharacterGrid = ({ allCharacters }) => {
     
     return (
         <div>
-            <div>
+            <div className="character-grid-container">
                 {
                     allCharacters.map((character) => {
                         return (
-                            <div key={character.id}>
-                                <img src={character.thumbnail} alt="" height={70} width={50}/>
+                            <div key={character.id} className="grid-card" onClick={() => console.log(character)}>
+                                <img src={character.thumbnail} alt="" />
                             </div>
                         )
                     })
