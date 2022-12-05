@@ -2,6 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: black;
+    padding: 2rem;
 }
 
 .grid-card {
@@ -13,6 +15,7 @@
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-timing-function: linear;
+    cursor: pointer;
     
 }
 .grid-card img {

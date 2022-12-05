@@ -10,7 +10,7 @@ const CharacterGrid = ({ allCharacters, setDisplayChar }) => {
                 {
                     allCharacters.map((character) => {
                         return (
-                            <div key={character.id} className="grid-card" onClick={() => selectCharacter(character)}>
+                            <div key={character.id} className="grid-card" onMouseOver={() => selectCharacter(character)}>
                                 <img src={character.thumbnail} alt="" />
                             </div>
                         )

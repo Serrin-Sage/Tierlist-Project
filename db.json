@@ -5,12 +5,6 @@
       "username": "Serrin",
       "password": "aperature",
       "tierlist": []
-    },
-    {
-      "username": "",
-      "password": "",
-      "tierlist": [],
-      "id": 2
     }
   ],
   "characters": [
@@ -27,13 +21,11 @@
       "name": "Harry Potter",
       "thumbnail": "./src/images/HarryPotterThumbnail.png",
       "displayImg": "./src/images/HarryPotterDisplay.png",
-      "strength": "Killing Stuff",
-      "weakness": "Blue Women"
+      "strength": "Magically Talented",
+      "weakness": "Reckless and Impulsive"
     }
   ],
   "global": [
-    {
-      
-    }
+    {}
   ]
 }

@@ -6,13 +6,15 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
     const [username, setUserName] = useState("")
     const [password, setPassword] = useState("")
 
+    let newUser = {
+        username: username,
+        password: password,
+        tierlist: []
+    }
+    
     const handleSubmit = (e) => {
         e.preventDefault()
-        let newUser = {
-            username: username,
-            password: password,
-            tierlist: []
-        }
+        
         
         users.some(element => {
             if (element.username == username) {

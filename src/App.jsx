@@ -4,7 +4,8 @@ import MainPage from './components/MainPage'
 import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
 import GlobalTiers from './components/GlobalTiers'
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -55,6 +56,7 @@ function App() {
         <Route path="signup" element={<SignUp users={users} setUsers={setUsers} setLoggedIn={setLoggedIn} setCurrentUser={setCurrentUser} />} />
         <Route path="globaltiers" element={GlobalTiers} />
       </Routes>
+      <ToastContainer />
     </div>
   )
 }

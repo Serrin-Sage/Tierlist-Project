@@ -1,0 +1,46 @@
+.main-signin {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(120deg, red, rgb(184, 0, 0), rgb(82, 0, 0));
+}
+
+.signin-content {
+    margin: auto;
+    background-color: rgb(15, 13, 13);
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    transform: translateY(-20px);
+}
+.signin-content h1{
+    color: rgb(190, 36, 190);
+    cursor: default;
+}
+.signin-content p {
+    margin: 5px;
+}
+
+.submit-btn {
+    text-align: center;
+    margin: 8px;
+}
+
+
+.signup-link {
+    text-decoration: none;
+    text-align: center;
+    transition: 0.5s;
+    padding: 5px;
+}
+.signup-text {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(190, 36, 190);
+    
+}
+.signup-link:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 5px 0px rgb(114, 0, 0);
+}
