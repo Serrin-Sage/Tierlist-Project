@@ -19,7 +19,6 @@ const MainPage = ({ setLoggedIn, setNewUser, currentUser }) => {
     },[setAllCharacters])
 
     
-    console.log(currentUser)
     return (
         <div>
             <Header setLoggedIn={setLoggedIn} setNewUser={setNewUser} currentUser={currentUser}/>
