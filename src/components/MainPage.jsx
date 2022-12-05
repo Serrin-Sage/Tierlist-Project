@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link } from 'react-router-dom'
+import Header from './Header'
 import CharacterGrid from './CharacterGrid'
 import CharacterDisplay from './CharacterDisplay'
 import TietList from './TierList'
@@ -17,15 +18,11 @@ const MainPage = ({ setLoggedIn, setNewUser, currentUser }) => {
         })
     },[setAllCharacters])
 
-    const LogOut = () => {
-        setLoggedIn(false)
-        setNewUser(false)
-    }
+    
     console.log(currentUser)
     return (
         <div>
-            <button onClick={() => LogOut()}>Log Out</button>
-            <h1>Welcome {currentUser.username}</h1>
+            <Header setLoggedIn={setLoggedIn} setNewUser={setNewUser} currentUser={currentUser}/>
             <h1>Character Tier List</h1>
             <p>Put Characters in Tiers, add new characters, save your tierlists and vote on others!</p>
             <CharacterGrid allCharacters={allCharacters} />

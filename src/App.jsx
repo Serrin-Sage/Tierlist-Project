@@ -18,6 +18,7 @@ function App() {
     .then((res) => res.json())
     .then((data) => {
       setUsers(data)
+      console.log(users)
     })
   },[setUsers])
 
@@ -50,8 +51,8 @@ function App() {
           setNewUser={setNewUser}
           currentUser={currentUser}/>} />)}
           
-        <Route path="signin" element={<SignIn users={users} setLoggedIn={setLoggedIn}/>} />
-        <Route path="signup" element={<SignUp users={users} setUsers={setUsers} setLoggedIn={setLoggedIn}/>} />
+        <Route path="signin" element={<SignIn users={users} setLoggedIn={setLoggedIn} setCurrentUser={setCurrentUser} setNewUser={setNewUser} />} />
+        <Route path="signup" element={<SignUp users={users} setUsers={setUsers} setLoggedIn={setLoggedIn} setCurrentUser={setCurrentUser} />} />
         <Route path="globaltiers" element={GlobalTiers} />
       </Routes>
     </div>

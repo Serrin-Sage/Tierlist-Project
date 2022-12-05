@@ -3,13 +3,6 @@ import { Link } from 'react-router-dom'
 
 const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
 
-    let testArray = users.map((user) => {
-        return  { 
-                    username: user.username, 
-                    password: user.password
-                }
-    })
-    
     const [username, setUserName] = useState("")
     const [password, setPassword] = useState("")
 
@@ -20,33 +13,35 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
             password: password,
             tierlist: []
         }
-        if (username === "" && password === "") {
-            console.log("ENTER VALID USERNAME AND PASSWORD")
-            return
-        }
         
+        users.some(element => {
+            if (element.username == username) {
+                console.log("USER ALREADY EXISTS")
+                return true
+            } else {
+                fetch("http://localhost:3000/users", {
+                    method: "POST",
+                    headers: {
+                        "Accept": "application/json",
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(newUser)
+                })
 
-        fetch("http://localhost:3000/users", {
-            method: "POST",
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(newUser)
+                setUsers((prevState) => {
+                    return [...prevState, newUser]
+                })
+                setLoggedIn(true)
+                setCurrentUser(newUser)
+                return false
+            }
         })
-
-        setUsers((prevState) => {
-            return [...prevState, newUser]
-        })
-
-        setLoggedIn(true)
-        setCurrentUser(newUser)
     }
 
     return (
         <div>
             <div>
-            <h1>Sign Up</h1>
+            <h1>Sign Up Here</h1>
                 <form onSubmit={handleSubmit}>
                     <label>
                         <p>Enter Username</p>
@@ -57,7 +52,7 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
                         <input type="password" onChange={e => setPassword(e.target.value)} />
                     </label>
                     <div>
-                        <button type='submit'>Submit</button>
+                        <button type='submit'>Complete</button>
                     </div>
                 </form>
             </div>
