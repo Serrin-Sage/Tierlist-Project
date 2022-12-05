@@ -4,10 +4,7 @@ import { Link } from 'react-router-dom'
 const SignIn = ({ users, setLoggedIn, setNewUser, setCurrentUser }) => {
     
     let testArray = users.map((user) => {
-        return  { 
-                    username: user.username, 
-                    password: user.password
-                }
+        return  user
     })
 
     const [username, setUserName] = useState()
@@ -16,6 +13,17 @@ const SignIn = ({ users, setLoggedIn, setNewUser, setCurrentUser }) => {
     
     const handleSubmit = (e) => {
         e.preventDefault()
+
+        users.some(element => {
+            if (element.username === username && element.password === password) {
+                return setCurrentUser(element), setLoggedIn(true)
+            } else {
+                console.log("GO TO SIGN UP")
+                return
+            }
+            
+        })
+
         let credentials = {
             username,
             password
@@ -24,13 +32,13 @@ const SignIn = ({ users, setLoggedIn, setNewUser, setCurrentUser }) => {
         // console.log(testArray)
 
         //trying to check if user exists in db
-        if (testArray.some(e => e.username === username) && testArray.some(e => e.password === password)) {
-            console.log("USER EXISTS")
-            setLoggedIn(true)
-            setCurrentUser(credentials)
-        } else {
-            console.log("GO TO SIGN UP PAGE")
-        }
+        // if (testArray.some(e => e.username === username) && testArray.some(e => e.password === password)) {
+        //     console.log("USER EXISTS")
+        //     setLoggedIn(true)
+        //     // setCurrentUser(current)
+        // } else {
+        //     console.log("GO TO SIGN UP PAGE")
+        // }
         
 
     }
