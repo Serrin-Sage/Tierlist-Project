@@ -19,7 +19,13 @@ const GlobalTiers = () => {
             <h1>GLOBAL TIERS PAGE</h1>
             <div>
                 {
-                    
+                    globalData.map((test) => {
+                        return (
+                            <div>
+                                {test.creator}
+                            </div>
+                        )
+                    })
                 }
             </div>
         </div>
