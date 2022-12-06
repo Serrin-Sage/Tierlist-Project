@@ -6,7 +6,7 @@ import CharacterDisplay from './CharacterDisplay'
 import TierList from './TierList'
 
 
-const MainPage = ({ setLoggedIn, setNewUser, currentUser }) => {
+const MainPage = ({ setLoggedIn, setNewUser, currentUser, setSavedTierList }) => {
 
     const [allCharacters, setAllCharacters] = useState([])
     const [displayChar, setDisplayChar] = useState([])
@@ -48,6 +48,7 @@ const MainPage = ({ setLoggedIn, setNewUser, currentUser }) => {
                 bTier={bTier}
                 cTier={cTier}
                 fTier={fTier}
+                setSavedTierList={setSavedTierList}
             />
         </div>
     )

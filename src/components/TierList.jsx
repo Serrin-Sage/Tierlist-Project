@@ -1,5 +1,19 @@
-const TierList = ({ tierlist, sTier, aTier, bTier, cTier, fTier }) => {
+import { Link } from 'react-router-dom'
 
+const TierList = ({ sTier, aTier, bTier, cTier, fTier, setSavedTierList }) => {
+
+    let tierListObj = {
+        sTier: sTier,
+        aTier: aTier,
+        bTier: bTier,
+        cTier: cTier,
+        fTier: fTier
+    }
+
+    const saveTierList = () => {
+        console.log(tierListObj)
+        setSavedTierList(tierListObj)
+    }
     return (
         <div className="tierlist-container">
             <div className="tier-collection">
@@ -53,6 +67,11 @@ const TierList = ({ tierlist, sTier, aTier, bTier, cTier, fTier }) => {
                         })
                     }
                 </div>
+                <div className="tier-btns">
+                    <div className="bottom-btn" id="save-tier" onClick={() => saveTierList()}>SAVE LIST</div>
+                    <Link to="/globaltiers"className="bottom-btn" id="global-btn">Global Lists</Link>
+                </div>
+                
             </div>
         </div>
     )

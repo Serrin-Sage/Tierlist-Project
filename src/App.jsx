@@ -13,6 +13,8 @@ function App() {
   const [newUser, setNewUser] = useState(false)
   const [users, setUsers] = useState([])
   const [currentUser, setCurrentUser] = useState([])
+  const [savedTierList, setSavedTierList] = useState([])
+  
   
   useEffect(() => {
     fetch("http://localhost:3000/users")
@@ -50,11 +52,12 @@ function App() {
         {['mainpage', '/'].map(path => <Route path={path} element={<MainPage 
           setLoggedIn={setLoggedIn} 
           setNewUser={setNewUser}
-          currentUser={currentUser}/>} />)}
+          currentUser={currentUser}
+          setSavedTierList={setSavedTierList}/>} />)}
           
         <Route path="signin" element={<SignIn users={users} setLoggedIn={setLoggedIn} setCurrentUser={setCurrentUser} setNewUser={setNewUser} />} />
         <Route path="signup" element={<SignUp users={users} setUsers={setUsers} setLoggedIn={setLoggedIn} setCurrentUser={setCurrentUser} />} />
-        <Route path="globaltiers" element={GlobalTiers} />
+        <Route path="globaltiers" element={<GlobalTiers savedTierList={savedTierList}/>} />
       </Routes>
       <ToastContainer />
     </div>

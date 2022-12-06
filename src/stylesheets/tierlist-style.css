@@ -61,4 +61,22 @@
     background-color: red;
 }
 
+.tier-btns {
+    display: flex;
+}
+.bottom-btn {
+    margin: 1rem;
+    padding: 10px;
+    cursor: pointer;
+}
 
+#save-tier {
+    float: right;
+    background-color: red;
+}
+
+#global-btn {
+    background-color: purple;
+    text-decoration: none;
+    color: black;
+}
