@@ -9,7 +9,6 @@ const CharacterGrid = ({ allCharacters, setDisplayChar }) => {
     }
 
     const selectCharacter = (clickedDiv, event) => {
-        console.log(event.target)
         event.target.style.border = "solid 2px red"
         setClicked(true)
         setDisplayChar(clickedDiv)

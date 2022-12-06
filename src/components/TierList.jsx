@@ -1,19 +1,32 @@
 import { Link } from 'react-router-dom'
 
-const TierList = ({ sTier, aTier, bTier, cTier, fTier, setSavedTierList }) => {
+const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTierList }) => {
 
     let tierListObj = {
-        sTier: sTier,
-        aTier: aTier,
-        bTier: bTier,
-        cTier: cTier,
-        fTier: fTier
+        creator: currentUser.username,
+        sTier,
+        aTier,
+        bTier,
+        cTier,
+        fTier
     }
 
     const saveTierList = () => {
         console.log(tierListObj)
         setSavedTierList(tierListObj)
+
+        fetch("http://localhost:3000/global", {
+            method: "POST",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(tierListObj)
+        })
+        .then((error) => console.log(error))
     }
+
+    
     return (
         <div className="tierlist-container">
             <div className="tier-collection">

@@ -43,6 +43,7 @@ const MainPage = ({ setLoggedIn, setNewUser, currentUser, setSavedTierList }) =>
                 setFTier={setFTier}
             />
             <TierList 
+                currentUser={currentUser}
                 sTier={sTier}
                 aTier={aTier}
                 bTier={bTier}

@@ -5,18 +5,6 @@
       "username": "Serrin",
       "password": "123",
       "tierlist": []
-    },
-    {
-      "id": 2,
-      "username": "Steve",
-      "password": "123",
-      "tierlist": []
-    },
-    {
-      "id": 3,
-      "username": "Corey",
-      "password": "123",
-      "tierlist": []
     }
   ],
   "characters": [
@@ -86,6 +74,41 @@
     }
   ],
   "global": [
-    {}
+    {
+      "creator": "Serrin",
+      "sTier": [
+        {
+          "id": 1,
+          "name": "Master Chief",
+          "thumbnail": "./src/images/MasterChiefThumnail.png",
+          "displayImg": "./src/images/MasterChiefDisplay.png",
+          "strength": "Killing Stuff",
+          "weakness": "Blue Women"
+        }
+      ],
+      "aTier": [
+        {
+          "id": 2,
+          "name": "Harry Potter",
+          "thumbnail": "./src/images/HarryPotterThumbnail.png",
+          "displayImg": "./src/images/HarryPotterDisplay.png",
+          "strength": "Magically Talented",
+          "weakness": "Reckless and Impulsive"
+        }
+      ],
+      "bTier": [
+        {
+          "id": 3,
+          "name": "Sora",
+          "thumbnail": "./src/images/SoraThumnail.png",
+          "displayImg": "./src/images/SoraDisplay.png",
+          "strength": "Power of Friendship",
+          "weakness": "Shoes and Kairi"
+        }
+      ],
+      "cTier": [],
+      "fTier": [],
+      "id": 1
+    }
   ]
 }

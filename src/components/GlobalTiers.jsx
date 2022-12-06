@@ -1,12 +1,27 @@
-const GlobalTiers = ({ savedTierList }) => {
+import { useState, useEffect } from 'react'
+
+//Eventually pull from global tier list db
+const GlobalTiers = () => {
     
-    savedTierList.forEach((test) =>{
-        console.log(test)
-    })
+    const [globalData, setGlobalData] = useState([])
+
+    useEffect(() => {
+        fetch("http://localhost:3000/global")
+        .then((res) => res.json())
+        .then((data) => {
+            setGlobalData(data)
+        })
+    },[])
+
+    console.log(globalData)
     return (
         <div>
             <h1>GLOBAL TIERS PAGE</h1>
-            
+            <div>
+                {
+                    
+                }
+            </div>
         </div>
     )
 }
