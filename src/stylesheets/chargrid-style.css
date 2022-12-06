@@ -1,9 +1,18 @@
 .character-grid-container {
+    background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: black;
+}
+.character-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
     padding: 2rem;
+    max-width: 700px;
+    height: fit-content;
 }
 
 .grid-card {
@@ -21,6 +30,8 @@
 .grid-card img {
     width: 90px;
     height: 120px;
+    margin-top: 5px;
+    vertical-align: bottom;
 }
 
 @keyframes changeColors {

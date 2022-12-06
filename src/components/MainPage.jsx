@@ -10,7 +10,6 @@ const MainPage = ({ setLoggedIn, setNewUser, currentUser }) => {
 
     const [allCharacters, setAllCharacters] = useState([])
     const [displayChar, setDisplayChar] = useState([])
-    const [userTiers, setUserTiers] = useState([])
     const [sTier, setSTier] = useState([])
     const [aTier, setATier] = useState([])
     const [bTier, setBTier] = useState([])
@@ -36,9 +35,7 @@ const MainPage = ({ setLoggedIn, setNewUser, currentUser }) => {
             </div>
             <CharacterGrid allCharacters={allCharacters} setDisplayChar={setDisplayChar}/>
             <CharacterDisplay 
-                displayChar={displayChar} 
-                userTiers={userTiers}
-                setUserTiers={setUserTiers}
+                displayChar={displayChar}
                 setSTier={setSTier}
                 setATier={setATier}
                 setBTier={setBTier}

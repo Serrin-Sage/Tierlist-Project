@@ -1,41 +1,75 @@
-const CharacterDisplay = ({ displayChar, userTiers, setUserTiers, setSTier, setATier }) => {
+const CharacterDisplay = ({ displayChar, setSTier, setATier, setBTier, setCTier, setFTier }) => {
 
-    // const assignToTier = (clickedTier, tierSetter) => {
-    //     //NEED TO FIND A WAY TO NOT ASSIGN TO MULTIPLE TIERS
-    //     setUserTiers((prevState) => {
-    //         if (prevState.includes(clickedTier)) return [...prevState]
-    //         return [...prevState, clickedTier]
+    const assignToTier = (character, tierSetter, tierArray) => {
+        tierSetter((prevState) => {
+            if (prevState.includes(character)) return [...prevState]
+            return [...prevState, character]
+        })
+
+        tierArray.forEach((tier) =>{
+            if (tier === "S") {
+                setSTier((prevState) => {
+                    return [...prevState.filter((toRemove) => {
+                        return toRemove.id !== character.id
+                    })]
+                })
+            }
+            if (tier === "A") {
+                setATier((prevState) => {
+                    return [...prevState.filter((toRemove) =>{
+                        return toRemove.id !== character.id
+                    })]
+                })
+            }
+            if (tier === "B") {
+                setBTier((prevState) => {
+                    return [...prevState.filter((toRemove) =>{
+                        return toRemove.id !== character.id
+                    })]
+                })
+            }
+            if (tier === "C") {
+                setCTier((prevState) => {
+                    return [...prevState.filter((toRemove) =>{
+                        return toRemove.id !== character.id
+                    })]
+                })
+            }
+            if (tier === "F") {
+                setFTier((prevState) => {
+                    return [...prevState.filter((toRemove) =>{
+                        return toRemove.id !== character.id
+                    })]
+                })
+            }
+
+        })
+        
+    }
+
+    // const assignToS = ( character ) => {
+    //     setSTier((prevState) => {
+    //         if (prevState.includes(character)) return [...prevState]
+    //         return [...prevState, character]
     //     })
-
-    //     tierSetter((prevState) => {
-    //         if (prevState.includes(clickedTier)) return [...prevState]
-    //         return [...prevState, clickedTier]
+    //     setATier((prevState) => {
+    //         return [...prevState.filter((toRemove) =>{
+    //             return toRemove.id !== character.id
+    //         })]
     //     })
     // }
-
-    const assignToS = ( character ) => {
-        setSTier((prevState) => {
-            if (prevState.includes(character)) return [...prevState]
-            return [...prevState, character]
-        })
-        setATier((prevState) => {
-            return [...prevState.filter((toRemove) =>{
-                return toRemove.id !== character.id
-            })]
-        })
-    }
     
-    const assignToA = ( character ) => {
-        setATier((prevState) => {
-            if (prevState.includes(character)) return [...prevState]
-            return [...prevState, character]
-        })
-        setSTier((prevState) => {
-            return [...prevState.filter((toRemove) =>{
-                return toRemove.id !== character.id
-            })]
-        })
-    }
+    // const assignToA = ( character ) => {
+    //     setATier((prevState) => {
+    //         if (prevState.includes(character)) return [...prevState]
+    //         return [...prevState, character]
+    //     })
+    //     setSTier((prevState) => {
+    //         return [...prevState.filter((toRemove) =>{
+    //             return toRemove.id !== character.id
+    //         })]
+    //     })
+    // }
 
     
     return (
@@ -47,11 +81,11 @@ const CharacterDisplay = ({ displayChar, userTiers, setUserTiers, setSTier, setA
                     <p>Strength: {displayChar.strength}</p>
                     <p>Weakness: {displayChar.weakness}</p>
                     <div className="tier-btn-container">
-                        <div className="tier-btn" onClick={() => assignToS(displayChar)}>S</div>
-                        <div className="tier-btn" onClick={() => assignToA(displayChar)}>A</div>
-                        <div className="tier-btn">B</div>
-                        <div className="tier-btn">C</div>
-                        <div className="tier-btn">F</div>
+                        <div className="tier-btn" onClick={() => assignToTier(displayChar, setSTier, ["A", "B", "C", "F"])}>S</div>
+                        <div className="tier-btn" onClick={() => assignToTier(displayChar, setATier, ["S", "B", "C", "F"])}>A</div>
+                        <div className="tier-btn" onClick={() => assignToTier(displayChar, setBTier, ["S", "A", "C", "F"])}>B</div>
+                        <div className="tier-btn" onClick={() => assignToTier(displayChar, setCTier, ["S", "A", "B", "F"])}>C</div>
+                        <div className="tier-btn" onClick={() => assignToTier(displayChar, setFTier, ["S", "A", "B", "C"])}>F</div>
                     </div>
                 </div>
             }

@@ -29,6 +29,54 @@
       "displayImg": "./src/images/HarryPotterDisplay.png",
       "strength": "Magically Talented",
       "weakness": "Reckless and Impulsive"
+    },
+    {
+      "id": 3,
+      "name": "Sora",
+      "thumbnail": "./src/images/SoraThumnail.png",
+      "displayImg": "./src/images/SoraDisplay.png",
+      "strength": "Power of Friendship",
+      "weakness": "Shoes and Kairi"
+    },
+    {
+      "id": 4,
+      "name": "Don Quixote",
+      "thumbnail": "./src/images/DonQuixoteThumnail.png",
+      "displayImg": "./src/images/DonQuixoteDisplay.png",
+      "strength": "Hunts and slays ferocious giants",
+      "weakness": "Thinks windmills are ferocious giants"
+    },
+    {
+      "id": 5,
+      "name": "Logan Roy",
+      "thumbnail": "./src/images/LoganRoyThumbnail.png",
+      "displayImg": "./src/images/LoganRoyDisplay.png",
+      "strength": "Built the successful media conglomerate Waystar Royco",
+      "weakness": "Terrible father and probably racist"
+    },
+    {
+      "id": 6,
+      "name": "PLACEHOLDER",
+      "thumbnail": "",
+      "displayImg": "",
+      "strength": "N/A",
+      "weakness": "N/A"
+    },
+    {
+      "id": 7,
+      "name": "PLACEHOLDER",
+      "thumbnail": "",
+      "displayImg": "",
+      "strength": "N/A",
+      "weakness": "N/A"
+    },
+    {
+      "id": 8,
+      "name": "Roy",
+      "thumbnail": "",
+      "displayImg": "",
+      "strength": "N/A",
+      "weakness": "N/A"
     }
   ],
   "global": [

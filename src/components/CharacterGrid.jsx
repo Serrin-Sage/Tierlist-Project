@@ -5,8 +5,8 @@ const CharacterGrid = ({ allCharacters, setDisplayChar }) => {
     }
 
     return (
-        <div>
-            <div className="character-grid-container">
+        <div className="character-grid-container">
+            <div className="character-grid">
                 {
                     allCharacters.map((character) => {
                         return (

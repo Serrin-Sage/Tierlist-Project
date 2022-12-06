@@ -18,6 +18,7 @@
 
 .tier {
     display: flex;
+    align-items: center;
     margin: 5px;
     height: 60px;
     width: 80%;
@@ -26,13 +27,38 @@
 }
 
 .tier-letter {
-    background-color: red;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 93%;
     width: 50px;
     margin: 2px;
-    text-align: center;
+    font-size: 26px;
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+    font-weight: 500;
 }
-#f-tier{
-    border-bottom: solid 2px black;
+
+.tier-img {
+    height: 50px;
+    margin-right: 5px;
 }
+
+#s-letter {
+    background-color: purple;
+}
+#a-letter {
+    background-color: rgb(91, 52, 199);
+}
+#b-letter {
+    background-color: rgb(39, 39, 201);
+}
+#c-letter {
+    background-color: rgb(41, 188, 199);
+}
+#f-letter {
+    background-color: red;
+}
+
+
