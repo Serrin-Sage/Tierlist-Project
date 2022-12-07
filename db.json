@@ -11,6 +11,12 @@
       "username": "Vincent",
       "password": "123",
       "tierlist": []
+    },
+    {
+      "id": 3,
+      "username": "Mary",
+      "password": "123",
+      "tierlist": []
     }
   ],
   "characters": [
@@ -24,11 +30,11 @@
     },
     {
       "id": 2,
-      "name": "Harry Potter",
-      "thumbnail": "./src/images/HarryPotterThumbnail.png",
-      "displayImg": "./src/images/HarryPotterDisplay.png",
-      "strength": "Magically Talented",
-      "weakness": "Reckless and Impulsive"
+      "name": "CJ",
+      "thumbnail": "",
+      "displayImg": "",
+      "strength": "Able to hold on arsenal of weapons in his pockets",
+      "weakness": "Unable to follow the damn train"
     },
     {
       "id": 3,
@@ -56,11 +62,11 @@
     },
     {
       "id": 6,
-      "name": "PLACEHOLDER",
+      "name": "Ben",
       "thumbnail": "",
       "displayImg": "",
-      "strength": "N/A",
-      "weakness": "N/A"
+      "strength": "Holding out against the zombie horde",
+      "weakness": "Strong personality clashing with stupid people"
     },
     {
       "id": 7,
@@ -80,104 +86,6 @@
     }
   ],
   "global": [
-    {
-      "creator": "Serrin",
-      "sTier": [
-        {
-          "id": 1,
-          "name": "Master Chief",
-          "thumbnail": "./src/images/MasterChiefThumnail.png",
-          "displayImg": "./src/images/MasterChiefDisplay.png",
-          "strength": "Killing Stuff",
-          "weakness": "Blue Women"
-        }
-      ],
-      "aTier": [
-        {
-          "id": 2,
-          "name": "Harry Potter",
-          "thumbnail": "./src/images/HarryPotterThumbnail.png",
-          "displayImg": "./src/images/HarryPotterDisplay.png",
-          "strength": "Magically Talented",
-          "weakness": "Reckless and Impulsive"
-        }
-      ],
-      "bTier": [
-        {
-          "id": 3,
-          "name": "Sora",
-          "thumbnail": "./src/images/SoraThumnail.png",
-          "displayImg": "./src/images/SoraDisplay.png",
-          "strength": "Power of Friendship",
-          "weakness": "Shoes and Kairi"
-        }
-      ],
-      "cTier": [],
-      "fTier": [],
-      "id": 1
-    },
-    {
-      "creator": "Serrin",
-      "sTier": [
-        {
-          "id": 1,
-          "name": "Master Chief",
-          "thumbnail": "./src/images/MasterChiefThumnail.png",
-          "displayImg": "./src/images/MasterChiefDisplay.png",
-          "strength": "Killing Stuff",
-          "weakness": "Blue Women"
-        }
-      ],
-      "aTier": [],
-      "bTier": [
-        {
-          "id": 3,
-          "name": "Sora",
-          "thumbnail": "./src/images/SoraThumnail.png",
-          "displayImg": "./src/images/SoraDisplay.png",
-          "strength": "Power of Friendship",
-          "weakness": "Shoes and Kairi"
-        }
-      ],
-      "cTier": [],
-      "fTier": [
-        {
-          "id": 5,
-          "name": "Logan Roy",
-          "thumbnail": "./src/images/LoganRoyThumbnail.png",
-          "displayImg": "./src/images/LoganRoyDisplay.png",
-          "strength": "Built the successful media conglomerate Waystar Royco",
-          "weakness": "Terrible father and probably racist"
-        }
-      ],
-      "id": 2
-    },
-    {
-      "creator": "Vincent",
-      "sTier": [
-        {
-          "id": 1,
-          "name": "Master Chief",
-          "thumbnail": "./src/images/MasterChiefThumnail.png",
-          "displayImg": "./src/images/MasterChiefDisplay.png",
-          "strength": "Killing Stuff",
-          "weakness": "Blue Women"
-        }
-      ],
-      "aTier": [],
-      "bTier": [
-        {
-          "id": 4,
-          "name": "Don Quixote",
-          "thumbnail": "./src/images/DonQuixoteThumnail.png",
-          "displayImg": "./src/images/DonQuixoteDisplay.png",
-          "strength": "Hunts and slays ferocious giants",
-          "weakness": "Thinks windmills are ferocious giants"
-        }
-      ],
-      "cTier": [],
-      "fTier": [],
-      "id": 3
-    }
+    
   ]
 }
