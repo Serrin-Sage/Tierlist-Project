@@ -35,7 +35,7 @@ const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTier
                     {
                         sTier.map((char) => {
                             return (
-                                <img src={char.thumbnail} className="tier-img" />
+                                <img key={char.i} src={char.thumbnail} className="tier-img" />
                             )
                         })
                     }
@@ -45,7 +45,7 @@ const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTier
                     {
                         aTier.map((char) => {
                             return (
-                                <img src={char.thumbnail} className="tier-img" />
+                                <img key={char.i} src={char.thumbnail} className="tier-img" />
                             )
                         })
                     }
@@ -55,7 +55,7 @@ const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTier
                     {
                         bTier.map((char) => {
                             return (
-                                <img src={char.thumbnail} className="tier-img" />
+                                <img key={char.i} src={char.thumbnail} className="tier-img" />
                             )
                         })
                     }
@@ -65,7 +65,7 @@ const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTier
                     {
                         cTier.map((char) => {
                             return (
-                                <img src={char.thumbnail} className="tier-img" />
+                                <img key={char.i} src={char.thumbnail} className="tier-img" />
                             )
                         })
                     }
@@ -75,7 +75,7 @@ const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTier
                     {
                         fTier.map((char) => {
                             return (
-                                <img src={char.thumbnail} className="tier-img" />
+                                <img key={char.i} src={char.thumbnail} className="tier-img" />
                             )
                         })
                     }

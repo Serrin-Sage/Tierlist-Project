@@ -5,18 +5,6 @@
       "username": "Serrin",
       "password": "123",
       "tierlist": []
-    },
-    {
-      "id": 2,
-      "username": "Vincent",
-      "password": "123",
-      "tierlist": []
-    },
-    {
-      "id": 3,
-      "username": "Mary",
-      "password": "123",
-      "tierlist": []
     }
   ],
   "characters": [
@@ -30,19 +18,19 @@
     },
     {
       "id": 2,
-      "name": "CJ",
-      "thumbnail": "",
-      "displayImg": "",
-      "strength": "Able to hold on arsenal of weapons in his pockets",
-      "weakness": "Unable to follow the damn train"
+      "name": "Dana Scully",
+      "thumbnail": "./src/images/DanaScullyThumbnail.png",
+      "displayImg": "./src/images/DanaScullyDisplay.png",
+      "strength": "Smart and Assertive, determined to seek the truth",
+      "weakness": "Reliance on science creates disbelief in the supernatural"
     },
     {
       "id": 3,
-      "name": "Sora",
-      "thumbnail": "./src/images/SoraThumnail.png",
-      "displayImg": "./src/images/SoraDisplay.png",
-      "strength": "Power of Friendship",
-      "weakness": "Shoes and Kairi"
+      "name": "CJ",
+      "thumbnail": "./src/images/CJThumbnail.png",
+      "displayImg": "./src/images/CJDisplay.png",
+      "strength": "Able to hold on arsenal of weapons in his pockets",
+      "weakness": "Unable to follow the damn train"
     },
     {
       "id": 4,
@@ -63,29 +51,90 @@
     {
       "id": 6,
       "name": "Ben",
-      "thumbnail": "",
-      "displayImg": "",
+      "thumbnail": "./src/images/BenThumbnail.png",
+      "displayImg": "./src/images/BenDisplay-rm.png",
       "strength": "Holding out against the zombie horde",
-      "weakness": "Strong personality clashing with stupid people"
+      "weakness": "Strong personality clashes with stupid people"
     },
     {
       "id": 7,
-      "name": "PLACEHOLDER",
-      "thumbnail": "",
-      "displayImg": "",
-      "strength": "N/A",
-      "weakness": "N/A"
+      "name": "Sora",
+      "thumbnail": "./src/images/SoraThumnail.png",
+      "displayImg": "./src/images/SoraDisplay.png",
+      "strength": "Power of Friendship",
+      "weakness": "Shoes and Kairi"
     },
     {
       "id": 8,
-      "name": "Roy",
-      "thumbnail": "./src/images/RoyThumbnail.png",
-      "displayImg": "./src/images/RoyDisplay.png",
-      "strength": "Roy's our boy, cool sword",
-      "weakness": "Terrible recovery"
+      "name": "Michonne",
+      "thumbnail": "./src/images/MichonneThumnail.png",
+      "displayImg": "./src/images/MichonneDisplay.png",
+      "strength": "Skilled with a katana and is a straight badass",
+      "weakness": "Rick"
     }
   ],
   "global": [
-    
+    {
+      "creator": "Serrin",
+      "sTier": [
+        {
+          "id": 1,
+          "name": "Master Chief",
+          "thumbnail": "./src/images/MasterChiefThumnail.png",
+          "displayImg": "./src/images/MasterChiefDisplay.png",
+          "strength": "Killing Stuff",
+          "weakness": "Blue Women"
+        },
+        {
+          "id": 8,
+          "name": "Michonne",
+          "thumbnail": "./src/images/MichonneThumnail.png",
+          "displayImg": "./src/images/MichonneDisplay.png",
+          "strength": "Skilled with a katana and is a straight badass",
+          "weakness": "Rick"
+        }
+      ],
+      "aTier": [
+        {
+          "id": 4,
+          "name": "Don Quixote",
+          "thumbnail": "./src/images/DonQuixoteThumnail.png",
+          "displayImg": "./src/images/DonQuixoteDisplay.png",
+          "strength": "Hunts and slays ferocious giants",
+          "weakness": "Thinks windmills are ferocious giants"
+        }
+      ],
+      "bTier": [
+        {
+          "id": 3,
+          "name": "CJ",
+          "thumbnail": "./src/images/CJThumbnail.png",
+          "displayImg": "./src/images/CJDisplay.png",
+          "strength": "Able to hold on arsenal of weapons in his pockets",
+          "weakness": "Unable to follow the damn train"
+        }
+      ],
+      "cTier": [
+        {
+          "id": 2,
+          "name": "Dana Scully",
+          "thumbnail": "./src/images/DanaScullyThumbnail.png",
+          "displayImg": "./src/images/DanaScullyDisplay.png",
+          "strength": "Smart and Assertive, determined to seek the truth",
+          "weakness": "Reliance on science creates disbelief in the supernatural"
+        }
+      ],
+      "fTier": [
+        {
+          "id": 7,
+          "name": "Sora",
+          "thumbnail": "./src/images/SoraThumnail.png",
+          "displayImg": "./src/images/SoraDisplay.png",
+          "strength": "Power of Friendship",
+          "weakness": "Shoes and Kairi"
+        }
+      ],
+      "id": 1
+    }
   ]
 }

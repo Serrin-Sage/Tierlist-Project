@@ -5,10 +5,9 @@
     background: linear-gradient(-45deg, red, rgb(66, 0, 0));
     animation: gradient 15s ease infinite;
 }
-
 .display-card {
     margin: 2rem;
-    background-color: white;
+    background-color: rgb(151, 144, 161);
     border: solid 2px black;
     padding: 1rem;
     border-radius: 15px;
@@ -16,10 +15,16 @@
 .display-image {
     height: 250px;
 }
-
+.attributes {
+    /* background-color: rgb(59, 2, 2); */
+    padding: 1px;
+}
 .tier-btn-container {
+    margin: auto;
+    margin-top: 6px;
+    justify-content: space-evenly;
     display: flex;
-    justify-content: space-between;
+    max-width: 230px;
 }
 
 .tier-btn {
@@ -30,4 +35,8 @@
     height: 20px;
     width: 20px;
     cursor: pointer;
+}
+
+.tier-btn:active {
+    background-color: red;
 }

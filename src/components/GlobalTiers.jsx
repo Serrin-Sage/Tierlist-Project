@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-
+import GlobalCard from './GlobalCard'
 //Eventually pull from global tier list db
 const GlobalTiers = () => {
     
@@ -19,11 +19,9 @@ const GlobalTiers = () => {
             <h1>GLOBAL TIERS PAGE</h1>
             <div>
                 {
-                    globalData.map((test) => {
+                    globalData.map((tierlist) => {
                         return (
-                            <div>
-                                {test.creator}
-                            </div>
+                            <GlobalCard key={tierlist.id} tierlist={tierlist}/>
                         )
                     })
                 }
