@@ -12,16 +12,29 @@ const Form = ({ setShowForm, setAllCharacters }) => {
     }
 
     let testObj = {
-        charName, 
+        name: charName, 
         thumbnail, 
-        display,
+        displayImg: display,
         strength,
         weakness
     }
 
     const addNewCharacter = (e) => {
         e.preventDefault()
-        console.log(testObj)
+        for (const property in testObj) {
+            if (testObj[property] === "") {
+                console.log("EMPTY INPUT EXISTS")
+                break
+            } else {
+                console.log(testObj)
+                setAllCharacters((prevState) => {
+                    return [...prevState, testObj]
+                })
+                removeDisplay()
+                break
+            }
+        }
+
     }
 
     return (
