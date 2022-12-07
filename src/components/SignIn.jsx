@@ -11,10 +11,11 @@ const SignIn = ({ users, setLoggedIn, setNewUser, setCurrentUser }) => {
     
     const [noUser, setNoUser] = useState(false)
 
-    const notify = () => toast("User does not exist: Go to Sign Up")
+    const notify = () => toast.error("Username or Password incorrect: \nTry again or Sign Up!", {
+        className: "black-background"
+    })
     const handleSubmit = (e) => {
         e.preventDefault()
-
         
         users.some(element => {
             if (element.username === username && element.password === password) {
@@ -48,8 +49,8 @@ const SignIn = ({ users, setLoggedIn, setNewUser, setCurrentUser }) => {
                         <p>Password</p>
                         <input type="password" onChange={e => setPassword(e.target.value)} />
                     </label>
-                    <div className='submit-btn'>
-                        <button type='submit'>Submit</button>
+                    <div className='submit-btn-container'>
+                        <button type='submit' className='submit-btn'>Submit</button>
                     </div>
                 </form>
                 <br />

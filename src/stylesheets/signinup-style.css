@@ -22,11 +22,29 @@
     margin: 5px;
 }
 
-.submit-btn {
+.submit-btn-container {
     text-align: center;
     margin: 8px;
+    margin-top: 1rem;
 }
-
+.submit-btn {
+    cursor: pointer;
+    background-color: black;
+    border: rgb(190, 36, 190) solid 2px;
+    color: whitesmoke;
+    padding: 4px;
+    padding-left: 9px;
+    padding-right: 9px;
+    transition: 0.5s;
+}
+.submit-btn:hover {
+    transform: scale(1.08);
+}
+.submit-btn:active {
+    border: solid 2px red;
+    transform: scale(1);
+    transition: none;
+}
 
 .signup-link {
     text-decoration: none;
@@ -35,6 +53,7 @@
     padding: 5px;
 }
 .signup-text {
+    font-size: 20px;
     text-decoration: none;
     font-weight: bold;
     color: rgb(190, 36, 190);
@@ -43,4 +62,9 @@
 .signup-link:hover {
     transform: scale(1.1);
     box-shadow: 0 0 5px 0px rgb(114, 0, 0);
+}
+
+.confirm-container {
+    text-align: center;
+    margin: 2rem;
 }

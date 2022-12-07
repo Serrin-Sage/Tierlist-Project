@@ -1,12 +1,19 @@
 import { useState } from "react"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
+
+    const navigate = useNavigate();
 
     const [username, setUserName] = useState("")
     const [password, setPassword] = useState("")
     const [userExists, setUserExists] = useState()
 
+    const notify = () => toast.error("Username Taken", {
+        className: "black-background"
+    })
     let newID = users.map((user) => {
         return user.id
     })
@@ -52,10 +59,11 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
         setLoggedIn(true)
         setCurrentUser(newUser)
         setUserExists()
+        navigate('/mainpage')
     }
 
     if (userExists === true) {
-        console.log("USER ALREADY EXISTS")
+        notify()
         setUserExists()
     }
 
@@ -72,11 +80,12 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
                         <p>Enter Password</p>
                         <input type="password" onChange={e => setPassword(e.target.value)} />
                     </label>
-                    <div className="submit-btn">
-                        <button type='submit'>Confirm</button>
+                    <div className="confirm-container">
+                        <button type='submit' className="submit-btn">Confirm</button>
                     </div>
                 </form>
             </div>
+            <ToastContainer />
         </div>
     )
 }
