@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Form from './Form'
 
-const CharacterGrid = ({ allCharacters, setDisplayChar }) => {
+const CharacterGrid = ({ allCharacters, setAllCharacters, setDisplayChar }) => {
     
     const [clicked, setClicked] = useState(false)
     const [showForm, setShowForm] = useState(false)
@@ -38,7 +38,7 @@ const CharacterGrid = ({ allCharacters, setDisplayChar }) => {
                 }
             </div>
             <button className='add-btn' onClick={() => displayForm()}>+</button>
-            {showForm && <Form setShowForm={setShowForm}/>}
+            {showForm && <Form setShowForm={setShowForm} setAllCharacters={setAllCharacters}/>}
         </div>
     )
 }

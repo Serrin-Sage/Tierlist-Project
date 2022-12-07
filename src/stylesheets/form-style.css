@@ -17,12 +17,13 @@
     text-align: center;
     margin-top: 8rem;
     padding: 2rem;
-    background-color: rgb(148, 0, 0);
+    background: linear-gradient(rgb(209, 15, 15), rgb(39, 6, 6));
     height: fit-content;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 .form-content h2 {
-
+    color: silver;
+    transform: translateY(-10px);
 }
 
 .exit-btn {
@@ -30,9 +31,36 @@
     width: 30px;
     border-radius: 5px;
     transform: translate(220px, -22px);
+    border: solid 1px black;
     cursor: pointer;
 }
 .exit-btn:hover {
     background-color: black;
     color: red;
+}
+
+.input-box {
+    height: 24px;
+    overflow: scroll;
+    background-color: rgb(240, 155, 240);
+    color: black;
+}
+
+.add-submit {
+    height: 50px;
+    width: 100px;
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 0 15px 0 15px;
+    background-color: black;
+    color: red;
+    border: solid 2px transparent;
+    cursor: pointer;
+}
+
+.add-submit:hover {
+    background-color: rgb(190, 36, 190);
+    color: black;
+    border: solid 2px black;
 }

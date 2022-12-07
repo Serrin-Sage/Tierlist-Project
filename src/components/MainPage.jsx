@@ -33,7 +33,7 @@ const MainPage = ({ setLoggedIn, setNewUser, currentUser, setSavedTierList }) =>
                 <h1>Character Tier List</h1>
                 <p>Rank Fictional Characters from any media in Tiers, <br/>add new characters, <br/>save your tierlists, <br />and view other users lists!</p>
             </div>
-            <CharacterGrid allCharacters={allCharacters} setDisplayChar={setDisplayChar}/>
+            <CharacterGrid allCharacters={allCharacters} setAllCharacters={setAllCharacters} setDisplayChar={setDisplayChar}/>
             <CharacterDisplay 
                 displayChar={displayChar}
                 setSTier={setSTier}
