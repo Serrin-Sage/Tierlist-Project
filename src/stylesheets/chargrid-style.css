@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 .character-grid {
     display: flex;
@@ -36,6 +37,21 @@
     vertical-align: bottom;
     border: 2px solid transparent
 }
+
+.add-btn {
+    /* transform: translateX(220px); */
+    transform: translate(220px, -20px);
+    background: rgb(182, 8, 8);
+    width: 30px;
+    height: 30px;
+    border: solid 1px red;
+    color: silver;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+
+
 
 @keyframes changeColors {
     0% {

@@ -1,8 +1,11 @@
 import { useState } from 'react'
+import Form from './Form'
 
 const CharacterGrid = ({ allCharacters, setDisplayChar }) => {
     
     const [clicked, setClicked] = useState(false)
+    const [showForm, setShowForm] = useState(false)
+
     const hoverCharacter = (clickedDiv) => {
         if (clicked) return
         setDisplayChar(clickedDiv)
@@ -18,9 +21,9 @@ const CharacterGrid = ({ allCharacters, setDisplayChar }) => {
         }, 2000)
     }
 
-    // window.addEventListener('click', (event) => {
-    //     setClicked(current => !current)
-    // })
+    const displayForm = () => {
+        setShowForm(current => !current)
+    }
     return (
         <div className="character-grid-container">
             <div className="character-grid">
@@ -34,6 +37,8 @@ const CharacterGrid = ({ allCharacters, setDisplayChar }) => {
                     })
                 }
             </div>
+            <button className='add-btn' onClick={() => displayForm()}>+</button>
+            {showForm && <Form setShowForm={setShowForm}/>}
         </div>
     )
 }

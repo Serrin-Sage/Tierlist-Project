@@ -12,6 +12,11 @@
     padding: 10px;
     border-radius: 20px;
     margin-top: 0.5rem;
+    border: solid 1px transparent;
+}
+.logout-btn:hover {
+    border: solid 1px white;
+    color: red
 }
 
 

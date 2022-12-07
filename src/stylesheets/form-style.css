@@ -1,0 +1,38 @@
+.form-container {
+    background: rgba(255, 255, 255, 0.521);
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    animation: fadein 0.35s ease-in forwards;
+}
+
+.form-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 8rem;
+    padding: 2rem;
+    background-color: rgb(148, 0, 0);
+    height: fit-content;
+    border-radius: 5px;
+}
+.form-content h2 {
+
+}
+
+.exit-btn {
+    background-color: red;
+    width: 30px;
+    border-radius: 5px;
+    transform: translate(220px, -22px);
+    cursor: pointer;
+}
+.exit-btn:hover {
+    background-color: black;
+    color: red;
+}
