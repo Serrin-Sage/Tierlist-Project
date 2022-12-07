@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 60%;
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
@@ -75,8 +75,18 @@
     background-color: red;
 }
 
+#save-tier:hover {
+    background-color: darkred;
+    color: silver;
+}
+
 #global-btn {
     background-color: purple;
     text-decoration: none;
-    color: black;
+    color: silver;
+}
+
+#global-btn:hover {
+    background-color: rgb(58, 12, 58);
+    color: white;
 }

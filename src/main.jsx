@@ -8,6 +8,7 @@ import './stylesheets/chargrid-style.css'
 import './stylesheets/display-style.css'
 import './stylesheets/tierlist-style.css'
 import './stylesheets/signinup-style.css'
+import './stylesheets/global-style.css'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <App />

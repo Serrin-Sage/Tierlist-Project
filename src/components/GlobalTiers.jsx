@@ -15,7 +15,7 @@ const GlobalTiers = () => {
 
     console.log(globalData)
     return (
-        <div>
+        <div className='global-main'>
             <h1>GLOBAL TIERS PAGE</h1>
             <div>
                 {
