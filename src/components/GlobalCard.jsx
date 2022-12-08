@@ -4,7 +4,6 @@ const GlobalCard = ({ tierlist }) => {
     return (
         <div className="global-container">
             <div className="global-content">
-                <h4 className="creator-title">Creator: {tierlist.creator}</h4>
                 <div className="global-tier">
                     <div className="global-letter" id="s-letter">S</div>
                         {
@@ -54,6 +53,9 @@ const GlobalCard = ({ tierlist }) => {
                                 )
                             })
                         }
+                </div>
+                <div>
+                    <h4 className="creator-title">Creator: <br />{tierlist.creator}</h4>
                 </div>
             </div>
         </div>
