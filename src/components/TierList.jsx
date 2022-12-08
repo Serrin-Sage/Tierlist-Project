@@ -34,7 +34,6 @@ const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTier
             cannotSave()
             return
         } else {
-            saveSuccess()
             setSavedTierList(tierListObj)
             fetch("http://localhost:3000/global", {
                 method: "POST",
@@ -44,22 +43,12 @@ const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTier
                 },
                 body: JSON.stringify(tierListObj)
             })
-            .then((error) => console.log(error))
+            .then((save) => {
+                if (save.ok) {
+                    saveSuccess()
+                }
+            })
         }
-
-        // KEEP THIS CODE
-        // console.log(tierListObj)
-        // setSavedTierList(tierListObj)
-
-        // fetch("http://localhost:3000/global", {
-        //     method: "POST",
-        //     headers: {
-        //         "Accept": "application/json",
-        //         "Content-Type": "application/json"
-        //     },
-        //     body: JSON.stringify(tierListObj)
-        // })
-        // .then((error) => console.log(error))
     }
 
     
@@ -117,7 +106,7 @@ const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTier
                     }
                 </div>
                 <div className="tier-btns">
-                    <div className="bottom-btn" id="save-tier" onClick={() => saveTierList()}>SAVE LIST</div>
+                    <div className="bottom-btn" id="save-tier" >SAVE LIST</div>
                     <Link to="/globaltiers"className="bottom-btn" id="global-btn">Global Lists</Link>
                 </div>
                 
@@ -127,3 +116,6 @@ const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTier
 }
 
 export default TierList
+
+// onClick = {() => saveTierList()}
+//PUT THIS BACK IN SAVE LIST BUTTON

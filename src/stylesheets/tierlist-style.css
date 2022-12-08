@@ -73,10 +73,12 @@
 #save-tier {
     float: right;
     background-color: red;
+    border: solid 2px red;
 }
 
 #save-tier:hover {
     background-color: darkred;
+    border: solid 2px red;
     color: silver;
 }
 
