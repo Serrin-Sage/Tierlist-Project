@@ -1,6 +1,12 @@
 import { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const Form = ({ setShowForm, setAllCharacters }) => {
+const Form = ({ currentUser, setShowForm, setAllCharacters, allCharacters }) => {
+
+    const emptyFields = () => toast.error("All fields must be filled", {
+        className: "error-notify"
+    })
     const [charName, setCharName] = useState("")
     const [thumbnail, setThumbnail] = useState("")
     const [display, setDisplay] = useState("")
@@ -21,19 +27,44 @@ const Form = ({ setShowForm, setAllCharacters }) => {
 
     const addNewCharacter = (e) => {
         e.preventDefault()
-        for (const property in testObj) {
-            if (testObj[property] === "") {
-                console.log("EMPTY INPUT EXISTS")
-                break
-            } else {
-                console.log(testObj)
-                setAllCharacters((prevState) => {
-                    return [...prevState, testObj]
+
+        if (charName === "" || thumbnail === "" || display === "" || strength === "" || weakness === "") {
+            emptyFields()
+            return
+        } else {
+            //ADD A PATCH METHOD TO ADD CHARACTER TO USER CHARACTER LIST
+            setAllCharacters((prevState) => {
+                return [...prevState, testObj]
+            })
+
+            fetch(`http://localhost:3000/users/${currentUser.id}`, {
+                method: "PATCH", 
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify({
+                    characters: [...allCharacters, testObj]
                 })
-                removeDisplay()
-                break
-            }
+            })
+            .catch((error) => console.log(error))
+            removeDisplay()
+            return
         }
+
+        // for (const property in testObj) {
+        //     if (testObj[property] === null) {
+        //         emptyFields()
+        //         break
+        //     } else {
+        //         console.log(testObj)
+        //         setAllCharacters((prevState) => {
+        //             return [...prevState, testObj]
+        //         })
+        //         removeDisplay()
+        //         break
+        //     }
+        // }
 
     }
 
