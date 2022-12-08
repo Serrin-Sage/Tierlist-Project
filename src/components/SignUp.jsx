@@ -23,6 +23,7 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
     })
     newID = Math.max(...newID) + 1
 
+    
     let newUser = {
         id: newID,
         username: username,

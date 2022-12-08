@@ -77,7 +77,7 @@
       "password": "boats",
       "characters": [
         {
-          "name" : "Sheik",
+          "name": "Sheik",
           "thumbnail": "https://tinyurl.com/bdeetmzp",
           "displayImg": "https://tinyurl.com/2zxvy88z",
           "strength": "Speedy Ninja",
@@ -107,7 +107,9 @@
       ]
     }
   ],
-  "global": [],
+  "global": [
+    
+  ],
   "characters": [
     {
       "id": 1,
@@ -127,46 +129,6 @@
     },
     {
       "id": 3,
-      "name": "CJ",
-      "thumbnail": "./src/images/CJThumbnail.png",
-      "displayImg": "./src/images/CJDisplay.png",
-      "strength": "Able to hold an arsenal of weapons in his pockets",
-      "weakness": "Unable to follow the damn train"
-    },
-    {
-      "id": 4,
-      "name": "Don Quixote",
-      "thumbnail": "./src/images/DonQuixoteThumnail.png",
-      "displayImg": "./src/images/DonQuixoteDisplay.png",
-      "strength": "Hunts and slays ferocious giants",
-      "weakness": "Thinks windmills are ferocious giants"
-    },
-    {
-      "id": 5,
-      "name": "Logan Roy",
-      "thumbnail": "./src/images/LoganRoyThumbnail.png",
-      "displayImg": "./src/images/LoganRoyDisplay.png",
-      "strength": "Built the successful media conglomerate Waystar Royco",
-      "weakness": "Terrible father and probably racist"
-    },
-    {
-      "id": 6,
-      "name": "Ben",
-      "thumbnail": "./src/images/BenThumbnail.png",
-      "displayImg": "./src/images/BenDisplay-rm.png",
-      "strength": "Capable leader against the living dead",
-      "weakness": "Strong personality clashes with stupid people"
-    },
-    {
-      "id": 7,
-      "name": "Sora",
-      "thumbnail": "./src/images/SoraThumnail.png",
-      "displayImg": "./src/images/SoraDisplay.png",
-      "strength": "Power of Friendship",
-      "weakness": "Shoes and Kairi"
-    },
-    {
-      "id": 8,
       "name": "Michonne",
       "thumbnail": "./src/images/MichonneThumnail.png",
       "displayImg": "./src/images/MichonneDisplay.png",
