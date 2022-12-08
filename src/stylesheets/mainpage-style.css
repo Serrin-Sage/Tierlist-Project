@@ -2,6 +2,7 @@
     background: linear-gradient(30deg, black 40%, rgb(177, 177, 177));
     padding: 1rem;
     border-bottom: solid 2px black;
+    cursor: default;
 }
 
 .logout-btn {
@@ -18,7 +19,9 @@
     border: solid 1px white;
     color: red
 }
-
+.logout-btn:active {
+    background-color: rgb(92, 92, 92);
+}
 
 .welcome-title {
     margin: 0;

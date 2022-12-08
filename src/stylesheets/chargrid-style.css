@@ -17,19 +17,20 @@
 }
 .active-card {
     border: solid rgb(255, 0, 0) 2px;
+    
 }
 .grid-card {
     margin: 2px;
     border: solid black 2px;
-    /* background-color: rgb(115, 228, 228); */
     animation-name: changeColors;
     animation-duration: 4s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-timing-function: linear;
     cursor: pointer;
-    
 }
+
+
 .grid-card img {
     width: 90px;
     height: 120px;
