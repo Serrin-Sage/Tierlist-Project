@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTierList }) => {
 
+    const notify = () => toast.success("Tier List saved to Global Lists", {
+        className: "success-notify"
+    })
     let tierListObj = {
         creator: currentUser.username,
         sTier,
@@ -34,8 +39,6 @@ const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTier
         //     }
         // }
 
-
-        console.log(tierListObj)
         setSavedTierList(tierListObj)
 
         fetch("http://localhost:3000/global", {
@@ -46,7 +49,11 @@ const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTier
             },
             body: JSON.stringify(tierListObj)
         })
-        .then((error) => console.log(error))
+        .then((check) => {
+            if (check.ok) {
+                notify()
+            }
+        })
     }
 
     
