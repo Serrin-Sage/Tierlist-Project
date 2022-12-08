@@ -11,11 +11,11 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
     const [password, setPassword] = useState("")
     const [userExists, setUserExists] = useState()
 
-    const notify = () => toast.error("Username Taken", {
-        className: "black-background"
+    const userTaken = () => toast.error("Username Taken", {
+        className: "error-notify"
     })
-    const notifyBlank = () => toast.error("All fields must be filled", {
-        className: "black-background"
+    const fieldBlank = () => toast.error("All fields must be filled", {
+        className: "error-notify"
     })
     
     let newID = users.map((user) => {
@@ -34,7 +34,7 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
         e.preventDefault()
         
         if (username === "" || password === "") {
-            notifyBlank()
+            fieldBlank()
             return
         }
         users.some(element => {
@@ -71,7 +71,7 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
     }
 
     if (userExists === true) {
-        notify()
+        userTaken()
         setUserExists()
     }
 

@@ -8,12 +8,12 @@ const SignIn = ({ users, setLoggedIn, setNewUser, setCurrentUser }) => {
     
     const [username, setUserName] = useState()
     const [password, setPassword] = useState()
-    
     const [noUser, setNoUser] = useState(false)
 
-    const notify = () => toast.error("Username or Password incorrect: \nTry again or Sign Up!", {
-        className: "black-background"
+    const siginError = () => toast.error("Username or Password incorrect: \nTry again or Sign Up!", {
+        className: "error-notify"
     })
+
     const handleSubmit = (e) => {
         e.preventDefault()
         
@@ -33,7 +33,7 @@ const SignIn = ({ users, setLoggedIn, setNewUser, setCurrentUser }) => {
    
     }
     if (noUser) {
-        notify()
+        siginError()
         setNoUser(false)
     }
     return (
