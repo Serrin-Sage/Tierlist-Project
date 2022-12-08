@@ -8,8 +8,16 @@ import TierList from './TierList'
 
 const MainPage = ({ setLoggedIn, setNewUser, currentUser, setSavedTierList }) => {
 
+    let placeHolder = {
+        name: "Choose a Character",
+        thumbnail: "",
+        displayImg: "",
+        strength: "N/A",
+        weakness: "N/A"
+    }
+    
     const [allCharacters, setAllCharacters] = useState([])
-    const [displayChar, setDisplayChar] = useState([])
+    const [displayChar, setDisplayChar] = useState(placeHolder)
     const [sTier, setSTier] = useState([])
     const [aTier, setATier] = useState([])
     const [bTier, setBTier] = useState([])

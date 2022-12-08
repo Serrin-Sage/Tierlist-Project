@@ -68,26 +68,32 @@
     margin: 1rem;
     padding: 10px;
     cursor: pointer;
+    transition: 0.2s;
+}
+.bottom-btn:active {
+    transform: scale(0.9);
 }
 
 #save-tier {
     float: right;
     background-color: red;
     border: solid 2px red;
+    font-weight: bold;
 }
-
 #save-tier:hover {
     background-color: darkred;
     border: solid 2px red;
     color: silver;
 }
 
+
 #global-btn {
     background-color: purple;
+    border: solid 2px purple;
     text-decoration: none;
     color: silver;
+    font-weight: bold;
 }
-
 #global-btn:hover {
     background-color: rgb(58, 12, 58);
     color: white;
