@@ -70,11 +70,44 @@
           "weakness": "Rick"
         }
       ]
+    },
+    {
+      "id": 2,
+      "username": "Michael",
+      "password": "boats",
+      "characters": [
+        {
+          "name" : "Sheik",
+          "thumbnail": "https://tinyurl.com/bdeetmzp",
+          "displayImg": "https://tinyurl.com/2zxvy88z",
+          "strength": "Speedy Ninja",
+          "weakness": "Ask Michael"
+        },
+        {
+          "name": "Sheik",
+          "thumbnail": "https://tinyurl.com/bdeetmzp",
+          "displayImg": "https://tinyurl.com/2zxvy88z",
+          "strength": "Speedy Ninja",
+          "weakness": "Ask Michael"
+        },
+        {
+          "name": "Sheik",
+          "thumbnail": "https://tinyurl.com/bdeetmzp",
+          "displayImg": "https://tinyurl.com/2zxvy88z",
+          "strength": "Speedy Ninja",
+          "weakness": "Ask Michael"
+        },
+        {
+          "name": "Sheik",
+          "thumbnail": "https://tinyurl.com/bdeetmzp",
+          "displayImg": "https://tinyurl.com/2zxvy88z",
+          "strength": "Speedy Ninja",
+          "weakness": "Ask Michael"
+        }
+      ]
     }
   ],
-  "global": [
-    
-  ],
+  "global": [],
   "characters": [
     {
       "id": 1,
