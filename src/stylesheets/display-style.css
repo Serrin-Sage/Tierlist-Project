@@ -18,6 +18,7 @@
 .attributes {
     /* background-color: rgb(59, 2, 2); */
     padding: 1px;
+    font-size: 20px;
 }
 .tier-btn-container {
     margin: auto;

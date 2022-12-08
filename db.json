@@ -53,7 +53,7 @@
       "name": "Ben",
       "thumbnail": "./src/images/BenThumbnail.png",
       "displayImg": "./src/images/BenDisplay-rm.png",
-      "strength": "Holding out against the zombie horde",
+      "strength": "Capable leader against the living dead",
       "weakness": "Strong personality clashes with stupid people"
     },
     {
@@ -69,9 +69,11 @@
       "name": "Michonne",
       "thumbnail": "./src/images/MichonneThumnail.png",
       "displayImg": "./src/images/MichonneDisplay.png",
-      "strength": "Skilled with a katana and is a straight badass",
+      "strength": "Skilled with a katana and is a straight up badass",
       "weakness": "Rick"
     }
   ],
-  "global": []
+  "global": [
+    
+  ]
 }
