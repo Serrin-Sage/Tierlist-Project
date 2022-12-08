@@ -14,6 +14,10 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
     const notify = () => toast.error("Username Taken", {
         className: "black-background"
     })
+    const notifyBlank = () => toast.error("All fields must be filled", {
+        className: "black-background"
+    })
+    
     let newID = users.map((user) => {
         return user.id
     })
@@ -29,6 +33,10 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         
+        if (username === "" || password === "") {
+            notifyBlank()
+            return
+        }
         users.some(element => {
             if (element.username == username) {
                 // console.log("USER ALREADY EXISTS")

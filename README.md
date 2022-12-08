@@ -10,4 +10,6 @@
 
 new dependencies used:
 - react-toastify (creates user notifications)
-- html2canvas (creates images of divs)
+
+
+Future plans: Give each user their own tierlists
