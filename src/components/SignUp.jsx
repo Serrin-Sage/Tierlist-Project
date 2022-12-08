@@ -27,7 +27,7 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
         id: newID,
         username: username,
         password: password,
-        tierlist: []
+        characters: []
     }
 
     const handleSubmit = (e) => {
@@ -39,7 +39,6 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
         }
         users.some(element => {
             if (element.username == username) {
-                // console.log("USER ALREADY EXISTS")
                 setUserExists(true)
                 return true
             } else {

@@ -8,6 +8,7 @@ import TierList from './TierList'
 
 const MainPage = ({ setLoggedIn, setNewUser, currentUser, setSavedTierList }) => {
 
+    
     let placeHolder = {
         name: "Choose a Character",
         thumbnail: "",
@@ -16,7 +17,7 @@ const MainPage = ({ setLoggedIn, setNewUser, currentUser, setSavedTierList }) =>
         weakness: "N/A"
     }
 
-    const [allCharacters, setAllCharacters] = useState([])
+    const [allCharacters, setAllCharacters] = useState(currentUser.characters)
     const [displayChar, setDisplayChar] = useState(placeHolder)
     const [sTier, setSTier] = useState([])
     const [aTier, setATier] = useState([])
@@ -25,13 +26,14 @@ const MainPage = ({ setLoggedIn, setNewUser, currentUser, setSavedTierList }) =>
     const [fTier, setFTier] = useState([])
 
 
-    useEffect(() => {
-        fetch("http://localhost:3000/characters")
-        .then((res) => res.json())
-        .then((data) => {
-            setAllCharacters(data)
-        })
-    },[setAllCharacters])
+    // useEffect(() => {
+    //     fetch("http://localhost:3000/users")
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //         console.log(data.characters)
+    //         setAllCharacters(data)
+    //     })
+    // },[setAllCharacters])
 
     
     return (
@@ -41,7 +43,7 @@ const MainPage = ({ setLoggedIn, setNewUser, currentUser, setSavedTierList }) =>
                 <h1>Character Tier List</h1>
                 <p>Rank Fictional Characters from any media in Tiers, <br/>add new characters, <br/>save your tierlists, <br />and view other users lists!</p>
             </div>
-            <CharacterGrid allCharacters={allCharacters} setAllCharacters={setAllCharacters} setDisplayChar={setDisplayChar}/>
+            <CharacterGrid currentUser={currentUser} allCharacters={allCharacters} setAllCharacters={setAllCharacters} setDisplayChar={setDisplayChar}/>
             <CharacterDisplay 
                 displayChar={displayChar}
                 setSTier={setSTier}

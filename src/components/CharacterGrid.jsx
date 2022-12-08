@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Form from './Form'
 import CharacterCard from './CharacterCard'
 
-const CharacterGrid = ({ allCharacters, setAllCharacters, setDisplayChar }) => {
+const CharacterGrid = ({ currentUser, allCharacters, setAllCharacters, setDisplayChar }) => {
     
     
     const [showForm, setShowForm] = useState(false)
@@ -33,7 +33,7 @@ const CharacterGrid = ({ allCharacters, setAllCharacters, setDisplayChar }) => {
                 }
             </div>
             <button className='add-btn' onClick={() => displayForm()}>+</button>
-            {showForm && <Form setShowForm={setShowForm} setAllCharacters={setAllCharacters}/>}
+            {showForm && <Form allCharacters={allCharacters} currentUser={currentUser} setShowForm={setShowForm} setAllCharacters={setAllCharacters}/>}
         </div>
     )
 }
