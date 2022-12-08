@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Link, useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,6 +10,7 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
     const [username, setUserName] = useState("")
     const [password, setPassword] = useState("")
     const [userExists, setUserExists] = useState()
+    const [defaultChar, setDefaultChars] = useState([])
 
     const userTaken = () => toast.error("Username Taken", {
         className: "error-notify"
@@ -23,12 +24,19 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
     })
     newID = Math.max(...newID) + 1
 
+    useEffect(() => {
+        fetch("http://localhost:3000/characters")
+        .then((res) => res.json())
+        .then((data) => {
+            setDefaultChars(data)
+        })
+    }, [])
     
     let newUser = {
         id: newID,
         username: username,
         password: password,
-        characters: []
+        characters: defaultChar
     }
 
     const handleSubmit = (e) => {
