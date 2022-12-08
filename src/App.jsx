@@ -9,6 +9,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
+  /* Use states to check if the user is logged in, if the user is new,
+    user array to check, the current user, and the saved tier list
+  */
   const [loggedIn, setLoggedIn] = useState(false)
   const [newUser, setNewUser] = useState(false)
   const [users, setUsers] = useState([])
@@ -25,7 +28,8 @@ function App() {
     })
   },[setUsers])
 
-  //if the user is not logged in, show the login page
+  //if the user is not logged in, show the Sign in page
+  //if the user is new show the Sign up page
   if(!loggedIn) {
     if(newUser) {
       return <SignUp 
@@ -46,9 +50,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        {/* <Route path="/mainpage" element={<MainPage setLoggedIn={setLoggedIn} setNewUser={setNewUser}/>}/>
-        <Route path="/" element={<MainPage setLoggedIn={setLoggedIn} setNewUser={setNewUser}/>}/> */}
-
+        
         {['mainpage', '/'].map(path => <Route path={path} element={<MainPage 
           setLoggedIn={setLoggedIn} 
           setNewUser={setNewUser}

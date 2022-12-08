@@ -1,6 +1,6 @@
 .global-main {
     background: linear-gradient(darkred, red, rgb(189, 21, 21), black);
-    height: 100vh;
+    min-height: 100vh;
     
 }
 
