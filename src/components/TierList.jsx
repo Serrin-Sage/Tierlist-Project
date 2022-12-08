@@ -4,9 +4,14 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTierList }) => {
 
-    const notify = () => toast.success("Tier List saved to Global Lists", {
+    const cannotSave = () => toast.error("Cannot save empty Tier List", {
+        className: "error-notify"
+    })
+
+    const saveSuccess = () => toast.success("Tier List Saved! View in Global Lists", {
         className: "success-notify"
     })
+
     let tierListObj = {
         creator: currentUser.username,
         sTier,
@@ -16,44 +21,45 @@ const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTier
         fTier
     }
 
-    let trial = [
+    let testingArray = [
         sTier, aTier, bTier, cTier, fTier
     ]
+
     const saveTierList = () => {
-        // console.log(trial)
-        // if (tierListObj.sTier.length === 0) {
-        //     console.log("EMPTY")
-        // }
 
-        //Need to check if tiers are empty
-        // let test = Object.values(tierListObj)
-        // for (let i = 0; i < test.length; i++) {
-        //     if (typeof test[i] !== "string") {
-        //         if (test[i].length > 0) {
-        //             console.log(test[i] + "NOT EMPTY")
-        //             break
-        //         } else {
-        //             console.log("EMPTY")
-        //             break
-        //         }
-        //     }
-        // }
-
-        setSavedTierList(tierListObj)
-
-        fetch("http://localhost:3000/global", {
-            method: "POST",
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(tierListObj)
+        let tierLength = testingArray.map((tier) => {
+            return tier.length
         })
-        .then((check) => {
-            if (check.ok) {
-                notify()
-            }
-        })
+        if (Math.max(...tierLength) === 0) {
+            cannotSave()
+            return
+        } else {
+            saveSuccess()
+            setSavedTierList(tierListObj)
+            fetch("http://localhost:3000/global", {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(tierListObj)
+            })
+            .then((error) => console.log(error))
+        }
+
+        // KEEP THIS CODE
+        // console.log(tierListObj)
+        // setSavedTierList(tierListObj)
+
+        // fetch("http://localhost:3000/global", {
+        //     method: "POST",
+        //     headers: {
+        //         "Accept": "application/json",
+        //         "Content-Type": "application/json"
+        //     },
+        //     body: JSON.stringify(tierListObj)
+        // })
+        // .then((error) => console.log(error))
     }
 
     
