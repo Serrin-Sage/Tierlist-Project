@@ -17,7 +17,8 @@ const GlobalTiers = () => {
     return (
         <div className='global-main'>
             <h1>GLOBAL TIERS PAGE</h1>
-            <div>
+            <hr/>
+            <div className='global-tiers-container'>
                 {
                     globalData.map((tierlist) => {
                         return (
