@@ -47,21 +47,33 @@ const CharacterDisplay = ({ displayChar, setSTier, setATier, setBTier, setCTier,
     
     return (
         <div className="display-container">
-            <div className="display-card" >
-                <h2>{displayChar.name}</h2>
-                <img src={displayChar.displayImg} className="display-image"/>
-                <div className="attributes"> 
-                    <p><strong>Strength:</strong> {displayChar.strength}</p>
-                    <p><strong>Weakness:</strong> {displayChar.weakness}</p>
-                </div>
-                <div className="tier-btn-container">
-                    <div className="tier-btn" id="s-btn" onClick={() => assignToTier(displayChar, setSTier, ["A", "B", "C", "F"])}>S</div>
-                    <div className="tier-btn" id="a-btn" onClick={() => assignToTier(displayChar, setATier, ["S", "B", "C", "F"])}>A</div>
-                    <div className="tier-btn" id="b-btn" onClick={() => assignToTier(displayChar, setBTier, ["S", "A", "C", "F"])}>B</div>
-                    <div className="tier-btn" id="c-btn" onClick={() => assignToTier(displayChar, setCTier, ["S", "A", "B", "F"])}>C</div>
-                    <div className="tier-btn" id="f-btn" onClick={() => assignToTier(displayChar, setFTier, ["S", "A", "B", "C"])}>F</div>
-                </div>
-            </div>
+            {
+                displayChar.name !== "Choose a Character" ?
+                    <div className="display-card" >
+                        <h2>{displayChar.name}</h2>
+                        <img src={displayChar.displayImg} className="display-image"/>
+                        <div className="attributes">
+                            <p><strong>Strength:</strong> {displayChar.strength}</p>
+                            <p><strong>Weakness:</strong> {displayChar.weakness}</p>
+                        </div>
+                        <div className="tier-btn-container">
+                            <div className="tier-btn" id="s-btn" onClick={() => assignToTier(displayChar, setSTier, ["A", "B", "C", "F"])}>S</div>
+                            <div className="tier-btn" id="a-btn" onClick={() => assignToTier(displayChar, setATier, ["S", "B", "C", "F"])}>A</div>
+                            <div className="tier-btn" id="b-btn" onClick={() => assignToTier(displayChar, setBTier, ["S", "A", "C", "F"])}>B</div>
+                            <div className="tier-btn" id="c-btn" onClick={() => assignToTier(displayChar, setCTier, ["S", "A", "B", "F"])}>C</div>
+                            <div className="tier-btn" id="f-btn" onClick={() => assignToTier(displayChar, setFTier, ["S", "A", "B", "C"])}>F</div>
+                        </div>
+                    </div>
+                    :
+                    <div className="display-card" >
+                        <h2>{displayChar.name}</h2>
+                        <img src={displayChar.displayImg} className="display-image" />
+                        <div className="attributes">
+                            <p><strong>Strength:</strong> {displayChar.strength}</p>
+                            <p><strong>Weakness:</strong> {displayChar.weakness}</p>
+                        </div>
+                    </div>
+            }
         </div>
     )
 }

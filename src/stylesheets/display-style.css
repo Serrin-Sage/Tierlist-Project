@@ -16,7 +16,6 @@
     height: 250px;
 }
 .attributes {
-    /* background-color: rgb(59, 2, 2); */
     padding: 1px;
     font-size: 20px;
 }
@@ -32,7 +31,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: solid 1px black; */
+    border: solid 2px transparent;
     font-weight: bold;
     border-radius: 5px;
     height: 25px;
@@ -41,35 +40,49 @@
 }
 .tier-btn:hover {
   transition: 0.2s;
-  transform: translateY(1px);
-
+  transform: translateY(2px);
 }
 .tier-btn:active {
-    background-color: red;
-    animation: clicked 1s linear;
+    color: rgb(141, 141, 141);
 }
 
 #s-btn {
     background-color: purple;
+    border: solid 2px purple;
 }
-#a-btn {
-    background-color: rgb(91, 52, 199);
-}
-#b-btn {
-    background-color: rgb(39, 39, 201);
-}
-#c-btn {
-    background-color: rgb(41, 188, 199);
-}
-#f-btn {
-    background-color: red;
+#s-btn:active {
+    background-color: rgb(66, 1, 66);
 }
 
-@keyframes clicked {
-    0% {
-        border: 2px solid red;
-    }
-    100% {
-        border: 2px solid transparent;
-    }
+#a-btn {
+    background-color: rgb(91, 52, 199);
+    border: solid 2px rgb(91, 52, 199)
 }
+#a-btn:active {
+    background-color: rgb(47, 26, 105);
+}
+
+#b-btn {
+    background-color: rgb(39, 39, 201);
+    border: solid 2px rgb(39, 39, 201);
+}
+#b-btn:active {
+    background-color: rgb(21, 21, 114);
+}
+
+#c-btn {
+    background-color: rgb(41, 188, 199);
+    border: solid 2px rgb(41, 188, 199);
+}
+#c-btn:active {
+    background-color: rgb(16, 79, 83);
+}
+
+#f-btn {
+    background-color: red;
+    border: solid 2px red;
+}
+#f-btn:active {
+    background-color: rgb(136, 4, 4);
+}
+
