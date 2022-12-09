@@ -1,6 +1,10 @@
+import { useState } from "react"
+
 const GlobalCard = ({ tierlist }) => {
 
-    
+    const [agree, setAgree] = useState(false)
+    const [disagree, setDisagree] = useState(false)
+
     return (
         <div className="global-container">
             <div className="global-content">
@@ -53,10 +57,17 @@ const GlobalCard = ({ tierlist }) => {
                                 )
                             })
                         }
+                        
+                </div>
+                <div className="vote-buttons">
+                    <button className={agree ? "agree-button" : "no-vote"}>AGREE</button>
+                    <button className={disagree ? "disagree-button" : "no-vote"}>DISAGREE</button>
+
                 </div>
                 <div>
                     <h4 className="creator-title">Creator: <br />{tierlist.creator}</h4>
                 </div>
+                
             </div>
         </div>
     )
