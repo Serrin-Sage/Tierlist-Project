@@ -26,6 +26,9 @@ const MainPage = ({ setLoggedIn, setNewUser, currentUser, setSavedTierList }) =>
     const [cTier, setCTier] = useState([])
     const [fTier, setFTier] = useState([])
  
+    const tiers = {sTier, aTier, bTier, cTier, fTier}
+    const tierSets = {setSTier, setATier, setBTier, setCTier, setFTier}
+
     return (
         <div>
             <Header setLoggedIn={setLoggedIn} setNewUser={setNewUser} currentUser={currentUser}/>
@@ -36,19 +39,12 @@ const MainPage = ({ setLoggedIn, setNewUser, currentUser, setSavedTierList }) =>
             <CharacterGrid currentUser={currentUser} allCharacters={allCharacters} setAllCharacters={setAllCharacters} setDisplayChar={setDisplayChar}/>
             <CharacterDisplay 
                 displayChar={displayChar}
-                setSTier={setSTier}
-                setATier={setATier}
-                setBTier={setBTier}
-                setCTier={setCTier}
-                setFTier={setFTier}
+                tierSets={tierSets}
             />
             <TierList 
                 currentUser={currentUser}
-                sTier={sTier}
-                aTier={aTier}
-                bTier={bTier}
-                cTier={cTier}
-                fTier={fTier}
+                tiers={tiers}
+                tierSets={tierSets}
                 setSavedTierList={setSavedTierList}
             />
         </div>

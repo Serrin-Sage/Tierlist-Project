@@ -1,4 +1,4 @@
-const CharacterDisplay = ({ displayChar, setSTier, setATier, setBTier, setCTier, setFTier }) => {
+const CharacterDisplay = ({ displayChar, tierSets }) => {
 
     /*Assign character to a given tier, takes in the selected character,
     the tier that was selected and an array of letters that does not include the selected letter.
@@ -12,35 +12,35 @@ const CharacterDisplay = ({ displayChar, setSTier, setATier, setBTier, setCTier,
 
         tierArray.forEach((tier) =>{
             if (tier === "S") {
-                setSTier((prevState) => {
+                tierSets.setSTier((prevState) => {
                     return [...prevState.filter((toRemove) => {
                         return toRemove.id !== character.id
                     })]
                 })
             }
             if (tier === "A") {
-                setATier((prevState) => {
+                tierSets.setATier((prevState) => {
                     return [...prevState.filter((toRemove) =>{
                         return toRemove.id !== character.id
                     })]
                 })
             }
             if (tier === "B") {
-                setBTier((prevState) => {
+                tierSets.setBTier((prevState) => {
                     return [...prevState.filter((toRemove) =>{
                         return toRemove.id !== character.id
                     })]
                 })
             }
             if (tier === "C") {
-                setCTier((prevState) => {
+                tierSets.setCTier((prevState) => {
                     return [...prevState.filter((toRemove) =>{
                         return toRemove.id !== character.id
                     })]
                 })
             }
             if (tier === "F") {
-                setFTier((prevState) => {
+                tierSets.setFTier((prevState) => {
                     return [...prevState.filter((toRemove) =>{
                         return toRemove.id !== character.id
                     })]
@@ -61,11 +61,11 @@ const CharacterDisplay = ({ displayChar, setSTier, setATier, setBTier, setCTier,
                             <p><strong>Weakness:</strong> {displayChar.weakness}</p>
                         </div>
                         <div className="tier-btn-container">
-                            <div className="tier-btn" id="s-btn" onClick={() => assignToTier(displayChar, setSTier, ["A", "B", "C", "F"])}>S</div>
-                            <div className="tier-btn" id="a-btn" onClick={() => assignToTier(displayChar, setATier, ["S", "B", "C", "F"])}>A</div>
-                            <div className="tier-btn" id="b-btn" onClick={() => assignToTier(displayChar, setBTier, ["S", "A", "C", "F"])}>B</div>
-                            <div className="tier-btn" id="c-btn" onClick={() => assignToTier(displayChar, setCTier, ["S", "A", "B", "F"])}>C</div>
-                            <div className="tier-btn" id="f-btn" onClick={() => assignToTier(displayChar, setFTier, ["S", "A", "B", "C"])}>F</div>
+                            <div className="tier-btn" id="s-btn" onClick={() => assignToTier(displayChar, tierSets.setSTier, ["A", "B", "C", "F"])}>S</div>
+                            <div className="tier-btn" id="a-btn" onClick={() => assignToTier(displayChar, tierSets.setATier, ["S", "B", "C", "F"])}>A</div>
+                            <div className="tier-btn" id="b-btn" onClick={() => assignToTier(displayChar, tierSets.setBTier, ["S", "A", "C", "F"])}>B</div>
+                            <div className="tier-btn" id="c-btn" onClick={() => assignToTier(displayChar, tierSets.setCTier, ["S", "A", "B", "F"])}>C</div>
+                            <div className="tier-btn" id="f-btn" onClick={() => assignToTier(displayChar, tierSets.setFTier, ["S", "A", "B", "C"])}>F</div>
                         </div>
                     </div>
                     :

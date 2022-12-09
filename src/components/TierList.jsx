@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTierList }) => {
+const TierList = ({ currentUser, tiers, tierSets, setSavedTierList }) => {
 
 
     const cannotSave = () => toast.error("Cannot save empty Tier List", {
@@ -16,16 +16,16 @@ const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTier
     //Saved object for later POST to global database
     let tierListObj = {
         creator: currentUser.username,
-        sTier,
-        aTier,
-        bTier,
-        cTier,
-        fTier
+        sTier: tiers.sTier,
+        aTier: tiers.aTier,
+        bTier: tiers.bTier,
+        cTier: tiers.cTier,
+        fTier: tiers.fTier
     }
 
     //Array to test array length when save is pressed
     let testingArray = [
-        sTier, aTier, bTier, cTier, fTier
+        tiers.sTier, tiers.aTier, tiers.bTier, tiers.cTier, tiers.fTier
     ]
 
     const saveTierList = () => {
@@ -58,16 +58,22 @@ const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTier
         }
     }
 
-    
+    const removeFromList = (clickedChar, tierArray) => {
+        tierArray((prevState) => {
+            return [...prevState.filter((toRemove) => {
+                return toRemove.id !== clickedChar.id
+            })]
+        })
+    }
     return (
         <div className="tierlist-container">
             <div className="tier-collection">
                 <div className="tier" id="s-tier">
                     <div className="tier-letter" id="s-letter">S</div>
                     {
-                        sTier.map((char) => {
+                        tiers.sTier.map((char) => {
                             return (
-                                <img key={char.i} src={char.thumbnail} className="tier-img" />
+                                <img key={char.i} src={char.thumbnail} className="tier-img" onClick={() => removeFromList(char, tierSets.setSTier)}/>
                             )
                         })
                     }
@@ -75,9 +81,9 @@ const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTier
                 <div className="tier" id="a-tier">
                     <div className="tier-letter" id="a-letter">A</div>
                     {
-                        aTier.map((char) => {
+                        tiers.aTier.map((char) => {
                             return (
-                                <img key={char.i} src={char.thumbnail} className="tier-img" />
+                                <img key={char.i} src={char.thumbnail} className="tier-img" onClick={() => removeFromList(char, tierSets.setATier)} />
                             )
                         })
                     }
@@ -85,9 +91,9 @@ const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTier
                 <div className="tier" id="b-tier">
                     <div className="tier-letter" id="b-letter">B</div>
                     {
-                        bTier.map((char) => {
+                        tiers.bTier.map((char) => {
                             return (
-                                <img key={char.i} src={char.thumbnail} className="tier-img" />
+                                <img key={char.i} src={char.thumbnail} className="tier-img" onClick={() => removeFromList(char, tierSets.setBTier)} />
                             )
                         })
                     }
@@ -95,9 +101,9 @@ const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTier
                 <div className="tier" id="c-tier">
                     <div className="tier-letter" id="c-letter">C</div>
                     {
-                        cTier.map((char) => {
+                        tiers.cTier.map((char) => {
                             return (
-                                <img key={char.i} src={char.thumbnail} className="tier-img" />
+                                <img key={char.i} src={char.thumbnail} className="tier-img" onClick={() => removeFromList(char, tierSets.setCTier)} />
                             )
                         })
                     }
@@ -105,9 +111,9 @@ const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTier
                 <div className="tier" id="f-tier">
                     <div className="tier-letter" id="f-letter">F</div>
                     {
-                        fTier.map((char) => {
+                        tiers.fTier.map((char) => {
                             return (
-                                <img key={char.i} src={char.thumbnail} className="tier-img" />
+                                <img key={char.i} src={char.thumbnail} className="tier-img" onClick={() => removeFromList(char, tierSets.setFTier)} />
                             )
                         })
                     }
