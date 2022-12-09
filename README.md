@@ -14,7 +14,7 @@ new dependencies used:
 
 Future plans (if I continue with this project):
     - Have search functionality for the user (manual input is tedious)
-    - Give functionality to Agree and Disagree buttons
+    - Add and give functionality to Agree and Disagree buttons
     - Delete users
     - Delete Characters
     - Remove characters from tierlist with click
