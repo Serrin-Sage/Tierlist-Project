@@ -19,6 +19,7 @@ function App() {
   const [savedTierList, setSavedTierList] = useState([])
   
   
+  //get users from db and set users into array
   useEffect(() => {
     fetch("http://localhost:3000/users")
     .then((res) => res.json())

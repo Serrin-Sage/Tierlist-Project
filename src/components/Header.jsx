@@ -1,5 +1,6 @@
 const Header = ({ setLoggedIn, setNewUser, currentUser }) => {
 
+    //Log out resets login and new user states
     const LogOut = () => {
         setLoggedIn(false)
         setNewUser(false)

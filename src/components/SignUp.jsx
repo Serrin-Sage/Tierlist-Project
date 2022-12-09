@@ -7,6 +7,7 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
 
     const navigate = useNavigate();
 
+    //use state for new user and password, check if user exists, and default character array
     const [username, setUserName] = useState("")
     const [password, setPassword] = useState("")
     const [userExists, setUserExists] = useState()
@@ -19,6 +20,7 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
         className: "error-notify"
     })
     
+    //creates a new id for the user based on the max of ids in user array
     let newID = users.map((user) => {
         return user.id
     })
@@ -32,6 +34,7 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
         })
     }, [])
     
+    //create new user object from input
     let newUser = {
         id: newID,
         username: username,
@@ -41,11 +44,12 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        
+        //if either inputs are blank throw an error
         if (username === "" || password === "") {
             fieldBlank()
             return
         }
+        //if the user exists throw an error
         users.some(element => {
             if (element.username == username) {
                 setUserExists(true)
@@ -57,6 +61,7 @@ const SignUp = ({ users, setUsers, setLoggedIn, setCurrentUser }) => {
         })
     }
 
+    //if user does not exist, sign up is successful and user is moved to mainpage
     if (userExists === false) {
         console.log("NEW USER CREATED")
         fetch("http://localhost:3000/users", {

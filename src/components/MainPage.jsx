@@ -8,7 +8,7 @@ import TierList from './TierList'
 
 const MainPage = ({ setLoggedIn, setNewUser, currentUser, setSavedTierList }) => {
 
-    
+    //Placeholder to display when no character is selected
     let placeHolder = {
         name: "Choose a Character",
         thumbnail: "",
@@ -17,6 +17,7 @@ const MainPage = ({ setLoggedIn, setNewUser, currentUser, setSavedTierList }) =>
         weakness: "N/A"
     }
 
+    //Use states for all characters, displayed character, and each tier as their own array
     const [allCharacters, setAllCharacters] = useState(currentUser.characters)
     const [displayChar, setDisplayChar] = useState(placeHolder)
     const [sTier, setSTier] = useState([])
@@ -24,18 +25,7 @@ const MainPage = ({ setLoggedIn, setNewUser, currentUser, setSavedTierList }) =>
     const [bTier, setBTier] = useState([])
     const [cTier, setCTier] = useState([])
     const [fTier, setFTier] = useState([])
-
-
-    // useEffect(() => {
-    //     fetch("http://localhost:3000/users")
-    //     .then((res) => res.json())
-    //     .then((data) => {
-    //         console.log(data.characters)
-    //         setAllCharacters(data)
-    //     })
-    // },[setAllCharacters])
-
-    
+ 
     return (
         <div>
             <Header setLoggedIn={setLoggedIn} setNewUser={setNewUser} currentUser={currentUser}/>
