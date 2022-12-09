@@ -1,6 +1,7 @@
 const GlobalCard = ({ tierlist }) => {
 
-    
+    //tierlist will be mapped in a similar way as on the main page
+    //creates a 1 to 1 remap of the list saved by user
     return (
         <div className="global-container">
             <div className="global-content">

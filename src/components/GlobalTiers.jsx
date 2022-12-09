@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import GlobalCard from './GlobalCard'
-//Eventually pull from global tier list db
+
 const GlobalTiers = () => {
     
+    //use state to get the global list data
     const [globalData, setGlobalData] = useState([])
 
     useEffect(() => {
@@ -13,7 +14,6 @@ const GlobalTiers = () => {
         })
     },[])
 
-    console.log(globalData)
     return (
         <div className='global-main'>
             <h1>GLOBAL TIERS PAGE</h1>

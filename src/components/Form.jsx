@@ -7,6 +7,8 @@ const Form = ({ currentUser, setShowForm, setAllCharacters, allCharacters }) => 
     const emptyFields = () => toast.error("All fields must be filled", {
         className: "error-notify"
     })
+
+    //use state for new character name, thumbnail, display, strength and weakness
     const [charName, setCharName] = useState("")
     const [thumbnail, setThumbnail] = useState("")
     const [display, setDisplay] = useState("")
@@ -17,7 +19,8 @@ const Form = ({ currentUser, setShowForm, setAllCharacters, allCharacters }) => 
         setShowForm(false)
     }
 
-    let testObj = {
+    //creates an object for later PATCH to users characters
+    let newCharacter = {
         name: charName, 
         thumbnail, 
         displayImg: display,
@@ -27,16 +30,15 @@ const Form = ({ currentUser, setShowForm, setAllCharacters, allCharacters }) => 
 
     const addNewCharacter = (e) => {
         e.preventDefault()
-
+        //Checks if any field is empty, will not submit if any are true
         if (charName === "" || thumbnail === "" || display === "" || strength === "" || weakness === "") {
             emptyFields()
             return
         } else {
-            //ADD A PATCH METHOD TO ADD CHARACTER TO USER CHARACTER LIST
             setAllCharacters((prevState) => {
-                return [...prevState, testObj]
+                return [...prevState, newCharacter]
             })
-
+            //Patch to users characters, adds new character to database
             fetch(`http://localhost:3000/users/${currentUser.id}`, {
                 method: "PATCH", 
                 headers: {
@@ -44,28 +46,13 @@ const Form = ({ currentUser, setShowForm, setAllCharacters, allCharacters }) => 
                     "Accept": "application/json"
                 },
                 body: JSON.stringify({
-                    characters: [...allCharacters, testObj]
+                    characters: [...allCharacters, newCharacter]
                 })
             })
             .catch((error) => console.log(error))
             removeDisplay()
             return
         }
-
-        // for (const property in testObj) {
-        //     if (testObj[property] === null) {
-        //         emptyFields()
-        //         break
-        //     } else {
-        //         console.log(testObj)
-        //         setAllCharacters((prevState) => {
-        //             return [...prevState, testObj]
-        //         })
-        //         removeDisplay()
-        //         break
-        //     }
-        // }
-
     }
 
     return (

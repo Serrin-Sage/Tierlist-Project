@@ -4,15 +4,17 @@ import CharacterCard from './CharacterCard'
 
 const CharacterGrid = ({ currentUser, allCharacters, setAllCharacters, setDisplayChar }) => {
     
-    
+    //Set states for Form display and selected character
     const [showForm, setShowForm] = useState(false)
     const [selected, setSelected] = useState(false)
 
+    //hovering over character div will set them as selected
     const hoverCharacter = (hoverDiv) => {
         if (selected) return
         setDisplayChar(hoverDiv)
     }
 
+    //Swap bewtween states for display form
     const displayForm = () => {
         setShowForm(current => !current)
     }

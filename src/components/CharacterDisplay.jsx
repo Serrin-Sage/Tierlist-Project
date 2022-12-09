@@ -1,5 +1,9 @@
 const CharacterDisplay = ({ displayChar, setSTier, setATier, setBTier, setCTier, setFTier }) => {
 
+    /*Assign character to a given tier, takes in the selected character,
+    the tier that was selected and an array of letters that does not include the selected letter.
+    Character can only be assigned to one tier and will be removed if put into another.
+    */
     const assignToTier = (character, tierSetter, tierArray) => {
         tierSetter((prevState) => {
             if (prevState.includes(character)) return [...prevState]

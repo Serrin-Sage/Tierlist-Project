@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const SignIn = ({ users, setLoggedIn, setNewUser, setCurrentUser }) => {
     
+    //set state for username, password, and boolean for existing user
     const [username, setUserName] = useState()
     const [password, setPassword] = useState()
     const [noUser, setNoUser] = useState(false)
@@ -16,7 +17,8 @@ const SignIn = ({ users, setLoggedIn, setNewUser, setCurrentUser }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        
+        //if the user array contains the username and password inputted then Login
+        //Otherwise throw an error
         users.some(element => {
             if (element.username === username && element.password === password) {
                 setCurrentUser(element), 
@@ -32,10 +34,12 @@ const SignIn = ({ users, setLoggedIn, setNewUser, setCurrentUser }) => {
         
    
     }
+
     if (noUser) {
         siginError()
         setNoUser(false)
     }
+    
     return (
         <div className="main-signin">
             <div className="signin-content">

@@ -2,8 +2,10 @@ import { useState } from 'react'
 
 const CharacterCard = ({ character, setDisplayChar, hoverCharacter, setSelected}) => {
 
+    //use state to track the click from the user
     const [clicked, setClicked] = useState(false)
 
+    //User select character, setting the displayed character, temporarily disabling the mouse over event
     const selectCharacter = (clickedDiv) => {
         setClicked(true)
         setSelected(true)

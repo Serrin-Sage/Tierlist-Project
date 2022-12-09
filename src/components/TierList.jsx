@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTierList }) => {
 
+
     const cannotSave = () => toast.error("Cannot save empty Tier List", {
         className: "error-notify"
     })
@@ -12,6 +13,7 @@ const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTier
         className: "success-notify"
     })
 
+    //Saved object for later POST to global database
     let tierListObj = {
         creator: currentUser.username,
         sTier,
@@ -21,19 +23,24 @@ const TierList = ({ currentUser, sTier, aTier, bTier, cTier, fTier, setSavedTier
         fTier
     }
 
+    //Array to test array length when save is pressed
     let testingArray = [
         sTier, aTier, bTier, cTier, fTier
     ]
 
     const saveTierList = () => {
 
+        //makes an array of the array lengths of the tiers
         let tierLength = testingArray.map((tier) => {
             return tier.length
         })
+        //if the max length of the tierLength array is 0 then tier list will not be saved
+        //this prevents saving an empty tier list
         if (Math.max(...tierLength) === 0) {
             cannotSave()
             return
         } else {
+            //otherwise save the tier list and send to global list
             setSavedTierList(tierListObj)
             fetch("http://localhost:3000/global", {
                 method: "POST",
