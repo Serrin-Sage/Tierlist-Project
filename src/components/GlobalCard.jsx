@@ -1,6 +1,7 @@
 import { useState } from "react"
 
 const GlobalCard = ({ tierlist }) => {
+
     const [agree, setAgree] = useState(false)
     const [disagree, setDisagree] = useState(false)
 
@@ -12,7 +13,7 @@ const GlobalCard = ({ tierlist }) => {
     const disagreeClick = () => {
         setDisagree(true)
         setAgree(false)
-  
+    }
     //tierlist will be mapped in a similar way as on the main page
     //creates a 1 to 1 remap of the list saved by user
     return (
