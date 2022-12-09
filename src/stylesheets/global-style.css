@@ -25,7 +25,7 @@
     margin: 0;
     margin-bottom: 2rem;
     width: 600px;
-    height: 280px;
+    height: 300px;
     transition: 0.5s;
     /* -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0);
   clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0); */
@@ -84,4 +84,43 @@
 .global-image {
     height: 30px;
     margin-right: 5px;
+}
+
+.vote-buttons {
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+}
+
+.no-vote {
+    transform: translateY(10px);
+    width: 100px;
+    height: 25px;
+    background-color: darkgray;
+    border: solid 2px black;
+    cursor: pointer;
+}
+.no-vote:hover {
+    background-color: rgb(78, 78, 78);
+    border: solid 2px black;
+    color: silver;
+}
+.no-vote:active {
+    background-color: rgb(133, 121, 121);
+}
+
+.agree-button {
+    transform: translateY(10px);
+    width: 100px;
+    height: 25px;
+    background-color: rgb(34, 202, 34);
+    border: solid 2px black;
+}
+
+.disagree-button {
+    transform: translateY(10px);
+    width: 100px;
+    height: 25px;
+    background-color: rgb(182, 0, 0);
+    border: solid 2px black;
 }
