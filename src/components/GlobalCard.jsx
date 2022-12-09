@@ -1,5 +1,18 @@
-const GlobalCard = ({ tierlist }) => {
+import { useState } from "react"
 
+const GlobalCard = ({ tierlist }) => {
+    const [agree, setAgree] = useState(false)
+    const [disagree, setDisagree] = useState(false)
+
+    const agreeClick = () => {
+        setAgree(true)
+        setDisagree(false)
+    }
+
+    const disagreeClick = () => {
+        setDisagree(true)
+        setAgree(false)
+  
     //tierlist will be mapped in a similar way as on the main page
     //creates a 1 to 1 remap of the list saved by user
     return (
@@ -54,10 +67,17 @@ const GlobalCard = ({ tierlist }) => {
                                 )
                             })
                         }
+                        
+                </div>
+                <div className="vote-buttons">
+                    <button className={agree ? "agree-button" : "no-vote"} onClick={() => agreeClick()}>AGREE</button>
+                    <button className={disagree ? "disagree-button" : "no-vote"} onClick={() => disagreeClick()}>DISAGREE</button>
+
                 </div>
                 <div>
                     <h4 className="creator-title">Creator: <br />{tierlist.creator}</h4>
                 </div>
+                
             </div>
         </div>
     )
